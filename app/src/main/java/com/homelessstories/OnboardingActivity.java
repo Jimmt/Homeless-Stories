@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import me.relex.circleindicator.CircleIndicator;
 
 public class OnboardingActivity extends FragmentActivity implements OnboardingPageFragment.OnFragmentInteractionListener {
     private static final int NUM_PAGES = 3;
@@ -22,6 +23,9 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
+
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+        indicator.setViewPager(pager);
     }
 
     @Override
@@ -30,13 +34,20 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
     }
 
     private class PagerAdapter extends FragmentStatePagerAdapter {
-        public PagerAdapter(FragmentManager m){
+        private Fragment[] pages;
+
+        public PagerAdapter(FragmentManager m) {
             super(m);
+            pages = new Fragment[NUM_PAGES];
+
+            for(int i = 0; i < NUM_PAGES; i++){
+                pages[i] = OnboardingPageFragment.newInstance("This is page " + String.valueOf(i));
+            }
         }
 
         @Override
         public Fragment getItem(int position) {
-            return OnboardingPageFragment.newInstance(String.valueOf(position), "b");
+            return pages[position];
         }
 
         @Override
