@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.homelessstories">
+    package="com.team7.homelessstories">
 
     <application
         android:allowBackup="true"
@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".OnboardingActivity"
+            android:name="com.team7.homelessstories.OnboardingActivity"
             android:label="@string/title_activity_onboarding" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.team7.homelessstories.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

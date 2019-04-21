@@ -1,5 +1,6 @@
-package com.homelessstories;
+package com.team7.homelessstories;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -21,11 +22,13 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
 
         pager = (ViewPager) findViewById(R.id.view_pager);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        PagerAdapter pagerAdapter = new PagerAdapter(this, getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
 
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(pager);
+
+        Utils.getPrefs(this).edit().putBoolean("onboarding_complete", false);
     }
 
     @Override
@@ -35,9 +38,11 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
 
     private class PagerAdapter extends FragmentStatePagerAdapter {
         private Fragment[] pages;
+        private Context context;
 
-        public PagerAdapter(FragmentManager m) {
+        public PagerAdapter(Context context, FragmentManager m) {
             super(m);
+            this.context = context;
             pages = new Fragment[NUM_PAGES];
 
             for(int i = 0; i < NUM_PAGES; i++){
@@ -47,6 +52,11 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
 
         @Override
         public Fragment getItem(int position) {
+            // Change to button press later
+            if(position == pages.length - 1){
+                Utils.getPrefs(context).edit().putBoolean("onboarding_complete", true).commit();
+                System.out.println(Utils.getPrefs(context).getBoolean("onboarding_complete", false));
+            }
             return pages[position];
         }
 

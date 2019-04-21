@@ -1,4 +1,4 @@
-package com.homelessstories;
+package com.team7.homelessstories;
 
 import org.junit.Test;
 
