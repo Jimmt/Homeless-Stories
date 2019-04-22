@@ -2,12 +2,13 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/story_card"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="270dp"
+    android:layout_height="125dp"
     android:layout_gravity="center_horizontal"
     android:layout_marginLeft="@dimen/mtrl_card_spacing"
     android:layout_marginTop="@dimen/mtrl_card_spacing"
     android:layout_marginRight="@dimen/mtrl_card_spacing"
+    android:layout_marginBottom="20dp"
     app:cardCornerRadius="10dp">
 
     <LinearLayout

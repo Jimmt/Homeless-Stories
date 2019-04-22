@@ -13,9 +13,9 @@ import com.google.android.material.card.MaterialCardView;
 import org.json.JSONException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 
 public class StoriesFragment extends Fragment {
@@ -40,12 +40,12 @@ public class StoriesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
-        addStoryCards(view, inflater);
+        addStoryCards(view, inflater, container);
 
         return view;
     }
 
-    private void addStoryCards(View view, LayoutInflater inflater){
+    private void addStoryCards(View view, LayoutInflater inflater, final ViewGroup container) {
         ArrayList<Story> stories = new ArrayList<>();
         try {
             stories = BuildStories.getStories(view.getContext());
@@ -56,7 +56,7 @@ public class StoriesFragment extends Fragment {
         LinearLayout storiesContainer = view.findViewById(R.id.stories_container);
 
         for (int i = 0; i < stories.size(); i++) {
-            Story story = stories.get(i);
+            final Story story = stories.get(i);
 
             View v = inflater.inflate(R.layout.story_card, storiesContainer);
             MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
@@ -67,8 +67,8 @@ public class StoriesFragment extends Fragment {
             mcv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Switch to story first decision
-
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(container.getId(), StoryFragment.newInstance(story)).addToBackStack(null).commit();
                 }
             });
         }
