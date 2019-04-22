@@ -1,0 +1,21 @@
+{
+	"name": "Bob",
+	"type": "Builder",
+	"decisions": [
+	  {
+		"decisionText": "Decision",
+		"answers": [
+		  {
+			"real": true,
+			"answer": "No",
+			"answerText": "Answer Text"
+		  },
+		  {
+			"real": false,
+			"answer": "Yes",
+			"answerText": "Answer Text"
+		  }
+		]
+	  }
+	]
+}

@@ -2,13 +2,20 @@ package com.team7.homelessstories;
 
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
+
+import org.json.JSONException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import androidx.fragment.app.Fragment;
 
 
 public class StoriesFragment extends Fragment {
@@ -33,19 +40,38 @@ public class StoriesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
-        LinearLayout storiesContainer = view.findViewById(R.id.stories_container);
-        View v = inflater.inflate(R.layout.story_button, storiesContainer);
-        MaterialCardView mcv = v.findViewById(R.id.story_card);
-        mcv.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // Switch to story first decision
-                System.out.println("abcd");
-            }
-        });
-        View storyButton2 = inflater.inflate(R.layout.story_button, storiesContainer);
+        addStoryCards(view, inflater);
 
         return view;
+    }
+
+    private void addStoryCards(View view, LayoutInflater inflater){
+        ArrayList<Story> stories = new ArrayList<>();
+        try {
+            stories = BuildStories.getStories(view.getContext());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        LinearLayout storiesContainer = view.findViewById(R.id.stories_container);
+
+        for (int i = 0; i < stories.size(); i++) {
+            Story story = stories.get(i);
+
+            View v = inflater.inflate(R.layout.story_card, storiesContainer);
+            MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
+
+            ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
+            ((TextView) mcv.findViewById(R.id.story_type)).setText(story.getType());
+
+            mcv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Switch to story first decision
+
+                }
+            });
+        }
     }
 
 }
