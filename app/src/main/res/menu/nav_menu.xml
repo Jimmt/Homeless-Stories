@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item android:id="@+id/refresh"
-            android:title="Refresh"
-            />
+        <item
+            android:id="@+id/stories"
+            android:title="Stories"
+            android:checked="true"/>
         <!--android:icon="@drawable/ic_action_refresh"-->
 
-        <item android:id="@+id/stop"
-            android:title="Stop" />
+        <item
+            android:id="@+id/about"
+            android:title="About" />
+
+        <item
+            android:id="@+id/donate"
+            android:title="Donate" />
+
+        <item
+            android:id="@+id/sources"
+            android:title="Sources" />
     </group>
 </menu>
