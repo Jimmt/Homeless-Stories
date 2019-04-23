@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 
 public class StoryFragment extends Fragment {
@@ -99,6 +100,12 @@ public class StoryFragment extends Fragment {
 
         displayDecision(inflater);
         listener.updateToolbarTitle(story.getName() + "'s Story");
+
+        MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);
+        progressBar.setProgress((int)((decisionIndex + 1.0) / story.getDecisions().size() * 100));
+
+        TextView progressIndicatorText = view.findViewById(R.id.progress_indicator);
+        progressIndicatorText.setText((decisionIndex + 1) + " of " + story.getDecisions().size());
         return view;
     }
 

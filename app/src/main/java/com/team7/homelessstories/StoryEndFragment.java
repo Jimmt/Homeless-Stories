@@ -1,6 +1,8 @@
 package com.team7.homelessstories;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -88,6 +90,13 @@ public class StoryEndFragment extends Fragment {
         });
 
         MaterialButton readMoreButton = view.findViewById(R.id.read_more_button);
+        readMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                startActivity(browserIntent);
+            }
+        });
 
         return view;
     }
