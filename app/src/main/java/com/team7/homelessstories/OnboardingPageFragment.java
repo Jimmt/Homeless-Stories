@@ -1,6 +1,7 @@
 package com.team7.homelessstories;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,7 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 
 /**
@@ -21,9 +27,11 @@ import androidx.fragment.app.Fragment;
  */
 public class OnboardingPageFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_TEXT = "text";
+    private static final String ARG_LAST_PAGE = "last_page";
 
-    private String mParam1;
+    private String text;
+    private boolean lastPage;
 
     private OnFragmentInteractionListener mListener;
 
@@ -31,17 +39,11 @@ public class OnboardingPageFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @return A new instance of fragment OnboardingPageFragment.
-     */
-    public static OnboardingPageFragment newInstance(String param1) {
+    public static OnboardingPageFragment newInstance(String text, boolean lastPage) {
         OnboardingPageFragment fragment = new OnboardingPageFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_TEXT, text);
+        args.putBoolean(ARG_LAST_PAGE, lastPage);
         fragment.setArguments(args);
         return fragment;
     }
@@ -50,7 +52,8 @@ public class OnboardingPageFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
+            text = getArguments().getString(ARG_TEXT);
+            lastPage = getArguments().getBoolean(ARG_LAST_PAGE);
         }
     }
 
@@ -60,7 +63,22 @@ public class OnboardingPageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_page_onboarding, container, false);
         TextView tv = (TextView) view.findViewById(R.id.text_view);
-        tv.setText(mParam1);
+        tv.setText(text);
+
+        MaterialButton startButton = view.findViewById(R.id.start_button);
+        if (!lastPage) {
+            ((ViewGroup) view).removeView(startButton);
+        } else {
+            startButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utils.getPrefs(getContext()).edit().putBoolean("onboarding_complete", true).commit();
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
         return view;
     }
 

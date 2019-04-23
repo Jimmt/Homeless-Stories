@@ -25,10 +25,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        boolean showOnboarding = false;
-//        showOnboarding = true;
+//        Utils.getPrefs(this).edit().putBoolean("onboarding_complete", false).commit();
 
-        if (showOnboarding) {
+        if (!Utils.getPrefs(this).getBoolean("onboarding_complete", false)) {
             Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
             startActivity(intent);
         } else {

@@ -45,18 +45,14 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
             this.context = context;
             pages = new Fragment[NUM_PAGES];
 
-            for(int i = 0; i < NUM_PAGES; i++){
-                pages[i] = OnboardingPageFragment.newInstance("This is page " + String.valueOf(i));
+            for (int i = 0; i < NUM_PAGES; i++) {
+                pages[i] = OnboardingPageFragment.newInstance("This is page " + String.valueOf(i),
+                        i == NUM_PAGES - 1 ? true : false);
             }
         }
 
         @Override
         public Fragment getItem(int position) {
-            // Change to button press later
-            if(position == pages.length - 1){
-                Utils.getPrefs(context).edit().putBoolean("onboarding_complete", true).commit();
-                System.out.println(Utils.getPrefs(context).getBoolean("onboarding_complete", false));
-            }
             return pages[position];
         }
 
