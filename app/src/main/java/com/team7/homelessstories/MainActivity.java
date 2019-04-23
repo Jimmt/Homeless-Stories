@@ -84,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         }
 
         // Insert the fragment by replacing any existing fragment
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frame_layout, fragment).commit();
 
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);

@@ -75,6 +75,7 @@ public class StoryFragment extends Fragment {
                 // Go back to stories fragment
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 fm.beginTransaction().replace(container.getId(), StoriesFragment.newInstance())
+                        .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
                         .addToBackStack(null).commit();
                 return true;
             default:
@@ -132,7 +133,10 @@ public class StoryFragment extends Fragment {
 
                     // Might need an intermediary screen instead of jumping between decisions quickly
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(container.getId(), frag).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction()
+                            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                            .replace(container.getId(), frag)
+                            .addToBackStack(null).commit();
                 }
             });
         }

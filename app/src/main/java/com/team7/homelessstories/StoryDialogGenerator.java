@@ -13,7 +13,8 @@ public class StoryDialogGenerator {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 FragmentManager fragmentManager = activity.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(container.getId(), StoryFragment.newInstance(story)).addToBackStack(null).commit();
+                fragmentManager.beginTransaction()
+                        .replace(container.getId(), StoryFragment.newInstance(story)).addToBackStack(null).commit();
             }
         };
 
