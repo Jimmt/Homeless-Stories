@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -102,7 +103,7 @@ public class BuildStories {
     }
 }
 
-class Story {
+class Story implements Serializable {
     private String name, type;
     private ArrayList<Decision> decisions;
 
@@ -125,7 +126,7 @@ class Story {
     }
 }
 
-class Decision {
+class Decision implements Serializable {
     private String decisionText;
     private ArrayList<Answer> answers;
 
@@ -143,7 +144,7 @@ class Decision {
     }
 }
 
-class Answer {
+class Answer implements Serializable {
     private boolean real;
     private String answer;
     private String answerText;
@@ -163,7 +164,7 @@ class Answer {
         return answerText;
     }
 
-    public boolean getReal() {
+    public boolean isReal() {
         return real;
     }
 }

@@ -13,7 +13,27 @@
 		  {
 			"real": false,
 			"answer": "Yes",
-			"answerText": "Answer Text"
+			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
+		  }
+		]
+	  },
+	  {
+		"decisionText": "Decision 2",
+		"answers": [
+		  {
+			"real": true,
+			"answer": "Answer 1",
+			"answerText": "Answer Text 1"
+		  },
+		  {
+			"real": false,
+			"answer": "Answer 2",
+			"answerText": "Answer Text 2"
+		  },
+		  {
+			"real": false,
+			"answer": "Answer 3",
+			"answerText": "Answer Text 3"
 		  }
 		]
 	  }
