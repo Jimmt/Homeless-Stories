@@ -1,8 +1,11 @@
 package com.team7.homelessstories;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -15,10 +18,10 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 
 public class StoriesFragment extends Fragment {
+    private FragmentInteractionListener listener;
 
     public StoriesFragment() {
         // Required empty public constructor
@@ -41,7 +44,7 @@ public class StoriesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
         addStoryCards(view, inflater, container);
-
+        listener.updateToolbarTitle("Stories");
         return view;
     }
 
@@ -67,11 +70,27 @@ public class StoriesFragment extends Fragment {
             mcv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(container.getId(), StoryFragment.newInstance(story)).addToBackStack(null).commit();
+                    StoryDialogGenerator.showDialog(getActivity(), container, story);
                 }
             });
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FragmentInteractionListener) {
+            listener = (FragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement StoryFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 
 }

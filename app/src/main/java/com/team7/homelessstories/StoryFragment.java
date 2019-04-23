@@ -1,9 +1,12 @@
 package com.team7.homelessstories;
 
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -25,8 +28,11 @@ public class StoryFragment extends Fragment {
     private Story story;
     private int decisionIndex;
 
+    private ViewGroup container;
     private TextView text;
     private LinearLayout buttonContainer;
+
+    private FragmentInteractionListener listener;
 
     public StoryFragment() {
         // Required empty public constructor
@@ -53,11 +59,36 @@ public class StoryFragment extends Fragment {
             story = (Story) getArguments().get(ARG_STORY);
             decisionIndex = getArguments().getInt(ARG_DECISION_INDEX);
         }
+        setHasOptionsMenu(true);
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.appbar_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_cancel:
+                // Go back to stories fragment
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                fm.beginTransaction().replace(container.getId(), StoriesFragment.newInstance())
+                        .addToBackStack(null).commit();
+                return true;
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        this.container = container;
         View view = inflater.inflate(R.layout.fragment_story, container, false);
 
         text = view.findViewById(R.id.decision_text);
@@ -65,11 +96,12 @@ public class StoryFragment extends Fragment {
         // Remove buttons put there for UI testing in-IDE.
         buttonContainer.removeAllViews();
 
-        displayDecision(inflater, container);
+        displayDecision(inflater);
+        listener.updateToolbarTitle(story.getName() + "'s Story");
         return view;
     }
 
-    private void displayDecision(LayoutInflater inflater, final ViewGroup container) {
+    private void displayDecision(LayoutInflater inflater) {
         text.setText(story.getDecisions().get(decisionIndex).getDecisionText());
 
         ArrayList<Answer> answers = story.getDecisions().get(decisionIndex).getAnswers();
@@ -95,7 +127,7 @@ public class StoryFragment extends Fragment {
                     if (decisionIndex < story.getDecisions().size() - 1) {
                         frag = StoryFragment.newInstance(story, ++decisionIndex);
                     } else {
-                        // Move to final screen
+                        frag = StoryEndFragment.newInstance(story);
                     }
 
                     // Might need an intermediary screen instead of jumping between decisions quickly
@@ -104,6 +136,23 @@ public class StoryFragment extends Fragment {
                 }
             });
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FragmentInteractionListener) {
+            listener = (FragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement StoryFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 
 }

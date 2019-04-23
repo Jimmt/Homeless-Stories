@@ -12,11 +12,15 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class BuildStories {
     private static ArrayList<Story> stories;
     private static final String TAG = BuildStories.class.getName();
 
+    /**
+     * Loads and parses JSON stories into Story objects, ordered by story index.
+     */
     public static ArrayList<Story> getStories(Context ctx) throws JSONException {
         if (stories == null) {
             ArrayList<JSONObject> obj = loadJsonStories(ctx);
@@ -30,11 +34,12 @@ public class BuildStories {
         }
     }
 
-    private static ArrayList<Story> readJsonStories(ArrayList<JSONObject> objs){
+    private static ArrayList<Story> readJsonStories(ArrayList<JSONObject> objs) {
         ArrayList<Story> stories = new ArrayList<>();
-        for(JSONObject obj : objs){
+        for (JSONObject obj : objs) {
             stories.add(readJsonStory(obj));
         }
+        Collections.sort(stories);
         return stories;
     }
 
@@ -58,7 +63,12 @@ public class BuildStories {
                 Decision d = new Decision(decision.getString("decisionText"), answers);
                 decisions.add(d);
             }
-            Story story = new Story(storyJSON.getString("name"), storyJSON.getString("type"), decisions);
+            Story story = new Story(
+                    storyJSON.getInt("index"),
+                    storyJSON.getString("name"),
+                    storyJSON.getString("type"),
+                    storyJSON.getString("finalText"), decisions);
+
             return story;
         } catch (JSONException je) {
             Log.e(TAG, je.getMessage());
@@ -66,18 +76,18 @@ public class BuildStories {
         }
     }
 
-    private static ArrayList<JSONObject> loadJsonStories(Context context){
+    private static ArrayList<JSONObject> loadJsonStories(Context context) {
         ArrayList<JSONObject> j = new ArrayList();
         String[] list = {};
-        try{
+        try {
             list = context.getAssets().list("");
-            for(String name : list){
-                if(name.endsWith(".json")){
+            for (String name : list) {
+                if (name.endsWith(".json")) {
                     j.add(loadJsonStory(name, context));
                 }
             }
-        } catch (IOException e){
-
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return j;
     }
@@ -103,15 +113,20 @@ public class BuildStories {
     }
 }
 
-class Story implements Serializable {
-    private String name, type;
+class Story implements Serializable, Comparable {
+    private int index;
+    private String name, type, finalText;
     private ArrayList<Decision> decisions;
 
-    public Story(String name, String type, ArrayList<Decision> decisions) {
+    public Story(int index, String name, String type, String finalText, ArrayList<Decision> decisions) {
+        this.index = index;
         this.name = name;
         this.type = type;
+        this.finalText = finalText;
         this.decisions = decisions;
     }
+
+    public int getIndex() { return index; }
 
     public String getName() {
         return name;
@@ -121,8 +136,17 @@ class Story implements Serializable {
         return type;
     }
 
+    public String getFinalText() {
+        return finalText;
+    }
+
     public ArrayList<Decision> getDecisions() {
         return decisions;
+    }
+
+    @Override
+    public int compareTo(Object story) {
+        return index - ((Story) story).getIndex();
     }
 }
 

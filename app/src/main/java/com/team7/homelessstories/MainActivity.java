@@ -2,7 +2,10 @@ package com.team7.homelessstories;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -12,9 +15,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentInteractionListener {
     private NavigationView navigationView;
     private DrawerLayout drawer;
+    private TextView toolbarTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         drawer = (DrawerLayout) findViewById(R.id.drawer);
         navigationView = (NavigationView) findViewById(R.id.navigation);
         setupDrawerContent(drawer);
+
+        toolbarTitle = drawer.findViewById(R.id.toolbar_title);
     }
 
     private void setupDrawerContent(DrawerLayout drawer) {
@@ -95,4 +101,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onSupportNavigateUp();
     }
 
+    @Override
+    public void updateToolbarTitle(String text) {
+        toolbarTitle.setText(text);
+    }
 }

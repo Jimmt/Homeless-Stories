@@ -1,4 +1,5 @@
 {
+	"index": 0,
 	"name": "Jazz",
 	"type": "Homeless Youth",
 	"decisions": [
@@ -37,5 +38,6 @@
 		  }
 		]
 	  }
-	]
+	],
+	"finalText": "Jazz gave away her dog to a friend. A key informant suggested that it was a brilliant move for creating credibility, for being known for giving a cool dog to a well-known person in the community. Social capital is essential on the streets."
 }
