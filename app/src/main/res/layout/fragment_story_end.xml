@@ -17,22 +17,14 @@
             android:id="@+id/final_text_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingLeft="40dp"
-            android:paddingTop="8dp"
-            android:paddingRight="40dp"
-            android:paddingBottom="8dp"
+            style="@style/StoryText"
             android:text="@string/hello_blank_fragment" />
 
         <TextView
             android:id="@+id/final_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingLeft="40dp"
-            android:paddingTop="8dp"
-            android:paddingRight="40dp"
-            android:paddingBottom="8dp"
+            style="@style/StoryText"
             android:text="@string/hello_blank_fragment"
             tools:text="final text" />
     </LinearLayout>

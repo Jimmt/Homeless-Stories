@@ -43,13 +43,9 @@
 
             <TextView
                 android:id="@+id/decision_text"
+                style="@style/StoryText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingLeft="40dp"
-                android:paddingTop="8dp"
-                android:paddingRight="40dp"
-                android:paddingBottom="8dp"
                 android:text="AOWEIFJAWEOIFJAOWIFJAWIOWJFOAIFJWEIFJOFIJWEIOFJAIWFJIOEFJWIOFJAWIOFJA AEFJOAWIEFJAWIO faweOJFI Awoeif aweiFJaeWIOFJaweIOF JAEW" />
         </FrameLayout>
 
@@ -64,14 +60,14 @@
             android:orientation="vertical">
 
             <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-                style="@style/CustomButton"
                 android:id="@+id/button_2"
+                style="@style/CustomButton"
                 android:layout_width="match_parent"
                 android:text="NEXT STORY" />
 
             <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-                style="@style/CustomButton"
                 android:id="@+id/button"
+                style="@style/CustomButton"
                 android:layout_width="match_parent"
                 android:text="BUTTON" />
         </LinearLayout>
