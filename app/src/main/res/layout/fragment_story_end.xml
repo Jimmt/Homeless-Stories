@@ -45,22 +45,15 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/CustomButton"
             android:id="@+id/next_story_button"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:text="NEXT STORY" />
 
         <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/read_more_button"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/CustomOutlineButton"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
             android:text="READ MORE" />
 
     </LinearLayout>

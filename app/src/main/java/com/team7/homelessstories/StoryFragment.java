@@ -102,6 +102,8 @@ public class StoryFragment extends Fragment {
         listener.updateToolbarTitle(story.getName() + "'s Story");
 
         MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);
+
+        // Google Forms does it this way, where at step one you are at 1 / n progress, not 0 / n.
         progressBar.setProgress((int)((decisionIndex + 1.0) / story.getDecisions().size() * 100));
 
         TextView progressIndicatorText = view.findViewById(R.id.progress_indicator);
