@@ -25,54 +25,49 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/placeholder" />
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:orientation="vertical"
-        android:weightSum="100"
-        app:layout_constraintBottom_toTopOf="@+id/progress_indicator_container"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="50"
+        app:layout_constraintBottom_toTopOf="@+id/button_container"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-        <FrameLayout
+        <TextView
+            android:id="@+id/decision_text"
+            style="@style/StoryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_weight="50">
+            android:layout_gravity="top"
+            android:paddingTop="@dimen/story_horizontal_margin"
+            android:text="AOWEIFJAWEOIFJAOWIFJAWIOWJFOAIFJWEIFJOFIJWEIOFJAIWFJIOEFJWIOFJAWIOFJA AEFJOAWIEFJAWIO faweOJFI Awoeif aweiFJaeWIOFJaweIOF JAEW"
+            tools:layout_editor_absoluteY="231dp" />
+    </ScrollView>
 
-            <TextView
-                android:id="@+id/decision_text"
-                style="@style/StoryText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="AOWEIFJAWEOIFJAOWIFJAWIOWJFOAIFJWEIFJOFIJWEIOFJAIWFJIOEFJWIOFJAWIOFJA AEFJOAWIEFJAWIO faweOJFI Awoeif aweiFJaeWIOFJaweIOF JAEW" />
-        </FrameLayout>
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="50"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/progress_indicator_container">
 
-        <LinearLayout
-            android:id="@+id/button_container"
+        <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/button_2"
+            style="@style/CustomButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="12dp"
-            android:layout_weight="50"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:text="NEXT STORY" />
 
-            <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/button_2"
-                style="@style/CustomButton"
-                android:layout_width="match_parent"
-                android:text="NEXT STORY" />
-
-            <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/button"
-                style="@style/CustomButton"
-                android:layout_width="match_parent"
-                android:text="BUTTON" />
-        </LinearLayout>
-
+        <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/button"
+            style="@style/CustomButton"
+            android:layout_width="match_parent"
+            android:text="BUTTON" />
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/progress_indicator_container"
