@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -28,9 +29,12 @@ import androidx.fragment.app.FragmentManager;
 public class OnboardingPageFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_TEXT = "text";
+    private static final String ARG_HEADER_TEXT = "headerText";
+    private static final String ARG_IMAGE_ID = "image_id";
     private static final String ARG_LAST_PAGE = "last_page";
 
-    private String text;
+    private String text, headerText;
+    private int imageId;
     private boolean lastPage;
 
     private OnFragmentInteractionListener mListener;
@@ -39,10 +43,12 @@ public class OnboardingPageFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static OnboardingPageFragment newInstance(String text, boolean lastPage) {
+    public static OnboardingPageFragment newInstance(int imageId, String headerText, String text, boolean lastPage) {
         OnboardingPageFragment fragment = new OnboardingPageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_TEXT, text);
+        args.putString(ARG_HEADER_TEXT, headerText);
+        args.putInt(ARG_IMAGE_ID, imageId);
         args.putBoolean(ARG_LAST_PAGE, lastPage);
         fragment.setArguments(args);
         return fragment;
@@ -53,6 +59,8 @@ public class OnboardingPageFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             text = getArguments().getString(ARG_TEXT);
+            headerText = getArguments().getString(ARG_HEADER_TEXT);
+            imageId = getArguments().getInt(ARG_IMAGE_ID);
             lastPage = getArguments().getBoolean(ARG_LAST_PAGE);
         }
     }
@@ -64,6 +72,12 @@ public class OnboardingPageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_page_onboarding, container, false);
         TextView tv = (TextView) view.findViewById(R.id.text_view);
         tv.setText(text);
+
+        TextView headerTextView = view.findViewById(R.id.header_text);
+        headerTextView.setText(headerText);
+
+        ImageView imageView = view.findViewById(R.id.image_view);
+        imageView.setImageResource(imageId);
 
         MaterialButton startButton = view.findViewById(R.id.start_button);
         if (!lastPage) {

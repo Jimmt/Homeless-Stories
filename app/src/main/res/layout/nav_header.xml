@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        style="@style/HeaderText"
         android:gravity="center|left"
         android:paddingLeft="20dp"
         android:text="Header" />

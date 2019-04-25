@@ -10,24 +10,45 @@
     </style>
 
     <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:layout_marginLeft">40dp</item>
-        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginLeft">@dimen/story_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/story_horizontal_margin</item>
         <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="CustomOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:layout_marginLeft">40dp</item>
-        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginLeft">@dimen/story_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/story_horizontal_margin</item>
         <item name="android:layout_gravity">center</item>
     </style>
 
     <style name="StoryText" parent="android:Widget.TextView">
-        <item name="android:paddingBottom">8dp</item>
-        <item name="android:paddingRight">40dp</item>
-        <item name="android:paddingLeft">40dp</item>
-        <item name="android:paddingTop">8dp</item>
+        <item name="android:textSize">@dimen/body_text_size</item>
+        <item name="android:paddingBottom">@dimen/story_vertical_margin</item>
+        <item name="android:paddingRight">@dimen/story_horizontal_margin</item>
+        <item name="android:paddingLeft">@dimen/story_horizontal_margin</item>
+        <item name="android:paddingTop">@dimen/story_vertical_margin</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="HeaderText" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingRight">@dimen/story_horizontal_margin</item>
+        <item name="android:paddingLeft">@dimen/story_horizontal_margin</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="BigText" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingRight">@dimen/story_horizontal_margin</item>
+        <item name="android:paddingLeft">@dimen/story_horizontal_margin</item>
+        <item name="android:paddingTop">16dp</item>
         <item name="android:layout_gravity">center</item>
     </style>
 

@@ -46,7 +46,7 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
             pages = new Fragment[NUM_PAGES];
 
             for (int i = 0; i < NUM_PAGES; i++) {
-                pages[i] = OnboardingPageFragment.newInstance("This is page " + String.valueOf(i),
+                pages[i] = OnboardingPageFragment.newInstance(R.drawable.placeholder, "Header","This is page " + String.valueOf(i),
                         i == NUM_PAGES - 1 ? true : false);
             }
         }
