@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class StoryFragment extends Fragment {
     private int decisionIndex;
 
     private ViewGroup container;
+    private ImageView storyImage;
     private TextView text;
     private LinearLayout buttonContainer;
 
@@ -94,6 +96,7 @@ public class StoryFragment extends Fragment {
         this.container = container;
         View view = inflater.inflate(R.layout.fragment_story, container, false);
 
+        storyImage = view.findViewById(R.id.story_image);
         text = view.findViewById(R.id.decision_text);
         buttonContainer = view.findViewById(R.id.button_container);
         // Remove buttons put there for UI testing in-IDE.
@@ -113,7 +116,11 @@ public class StoryFragment extends Fragment {
     }
 
     private void displayDecision(LayoutInflater inflater) {
-        text.setText(story.getDecisions().get(decisionIndex).getDecisionText());
+        Decision decision = story.getDecisions().get(decisionIndex);
+
+        int imageId = getResources().getIdentifier(decision.getImageName(), "drawable", getContext().getPackageName());
+        storyImage.setImageResource(imageId);
+        text.setText(decision.getDecisionText());
 
         ArrayList<Answer> answers = story.getDecisions().get(decisionIndex).getAnswers();
         for (int i = 0; i < answers.size(); i++) {

@@ -5,37 +5,52 @@
 	"preview": "At the time of this story, Jazz was a 20 year old homeless youth. She identified as white and reported being attracted to girls. Located in the U-District of Seattle, Jazz took a 4-week class called \"New Tech for Youth Sessions\" to develop skills for job opportunities. At the end of the class, she was contacted to participate in a study to explore the relationship homeless individuals have with technology.",
 	"decisions": [
 	  {
-		"decisionText": "Jazz was chosen to participate in the research study. Do you think she accepted or declined the invitation?",
+		"image": "placeholder",
+		"decisionText": "Jazz decided to participate in the study and received an iPod for free. What do you think she did with the iPod?",
 		"answers": [
 		  {
 			"real": true,
-			"answer": "No",
-			"answerText": "Answer Text"
+			"answer": "Sell the iPod"
 		  },
 		  {
 			"real": false,
-			"answer": "Yes",
+			"answer": "Listen to music",
 			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
 		  }
 		]
 	  },
 	  {
-		"decisionText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"image": "placeholder",
+		"decisionText": "Jazz decided to sell the iPod. What do you think Jazz did with the money from selling?",
 		"answers": [
 		  {
+			"real": false,
+			"answer": "Save up for apartment",
+			"answerText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Jazz did not use the money to save up for an apartment. Try another choice to see what she did!"
+		  },
+		  {
+			"real": false,
+			"answer": "Buy alcohol",
+			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
+		  },
+		  {
 			"real": true,
-			"answer": "Answer 1",
-			"answerText": "Answer Text 1"
-		  },
+			"answer": "Buy a dog"
+		  }
+		]
+	  },
+	  {
+		"image": "placeholder",
+		"decisionText": "Jazz bought a dog after pawning the iPod for money. What do you think she did with the dog?",
+		"answers": [
 		  {
 			"real": false,
-			"answer": "Answer 2",
-			"answerText": "Answer Text 2"
+			"answer": "Kept as a companion",
+			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
 		  },
 		  {
-			"real": false,
-			"answer": "Answer 3",
-			"answerText": "Answer Text 3"
+			"real": true,
+			"answer": "Gave it to a friend"
 		  }
 		]
 	  }

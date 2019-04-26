@@ -56,11 +56,6 @@ public class StoryEndFragment extends Fragment {
 
         this.container = container;
 
-        for(int i = 0; i < getActivity().getSupportFragmentManager().getBackStackEntryCount(); i++){
-            System.out.print(i + ": " + getActivity().getSupportFragmentManager().getBackStackEntryAt(i).getName() + ", ");
-        }
-        System.out.println();
-
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_story_end, container, false);
 

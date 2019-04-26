@@ -56,13 +56,15 @@ public class BuildStories {
                 JSONArray answersJSON = decision.getJSONArray("answers");
                 for (int k = 0; k < answersJSON.length(); k++) {
                     JSONObject answer = answersJSON.getJSONObject(k);
-                    Answer a = new Answer(answer.getBoolean("real"), answer.getString("answer"), answer.getString("answerText"));
+                    Answer a = new Answer(answer.getBoolean("real"), answer.getString("answer"),
+                            answer.has("answerText") ? answer.getString("answerText") : "");
                     answers.add(a);
                 }
 
-                Decision d = new Decision(decision.getString("decisionText"), answers);
+                Decision d = new Decision(decision.getString("decisionText"), decision.getString("image"), answers);
                 decisions.add(d);
             }
+
             Story story = new Story(
                     storyJSON.getInt("index"),
                     storyJSON.getString("name"),
@@ -156,12 +158,16 @@ class Story implements Serializable, Comparable {
 
 class Decision implements Serializable {
     private String decisionText;
+    private String imageName;
     private ArrayList<Answer> answers;
 
-    public Decision(String decisionText, ArrayList<Answer> answers) {
+    public Decision(String decisionText, String imageName, ArrayList<Answer> answers) {
         this.decisionText = decisionText;
         this.answers = answers;
+        this.imageName = imageName;
     }
+
+    public String getImageName() { return imageName; }
 
     public String getDecisionText() {
         return decisionText;
