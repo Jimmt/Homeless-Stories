@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -18,14 +19,20 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 
 public class StoryEndFragment extends Fragment {
     private static final String ARG_STORY = "story";
 
     private Story story;
+
+    private int NUM_PAGES = 0;
 
     private ViewGroup container;
 
@@ -53,6 +60,7 @@ public class StoryEndFragment extends Fragment {
         if (getArguments() != null) {
             story = (Story) getArguments().get(ARG_STORY);
         }
+        NUM_PAGES = story.getDecisions().size();
 
         this.container = container;
 
@@ -64,6 +72,13 @@ public class StoryEndFragment extends Fragment {
 
         TextView finalTextView = view.findViewById(R.id.final_text);
         finalTextView.setText(story.getFinalText());
+
+
+        TextView keyDecisionsText = view.findViewById(R.id.key_decisions_text);
+        keyDecisionsText.setText(story.getName() + "'s Key Decisions");
+
+        ViewPager pager = view.findViewById(R.id.view_pager);
+        pager.setAdapter(new CustomPagerAdapter(getContext()));
 
         MaterialButton nextStoryButton = view.findViewById(R.id.next_story_button);
         nextStoryButton.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +118,6 @@ public class StoryEndFragment extends Fragment {
     }
 
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.appbar_menu, menu);
@@ -126,14 +140,41 @@ public class StoryEndFragment extends Fragment {
         }
     }
 
+    private class CustomPagerAdapter extends PagerAdapter {
+        private ImageView[] pages;
+        private Context context;
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
+        public CustomPagerAdapter(Context context) {
+            this.context = context;
+            pages = new ImageView[NUM_PAGES];
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
+            for (int i = 0; i < NUM_PAGES; i++) {
+                pages[i] = null;
+            }
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup collection, int position) {
+            ImageView iv = new ImageView(context);
+            int imageId = getResources().getIdentifier(story.getDecisions().get(position).getImageName(), "drawable", getContext().getPackageName());
+            iv.setImageResource(imageId);
+            collection.addView(iv);
+            return iv;
+        }
+
+        @Override
+        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object view) {
+            container.removeView((View) view);
+        }
+
+        @Override
+        public int getCount() {
+            return NUM_PAGES;
+        }
+
+        @Override
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+            return view == object;
+        }
     }
 }

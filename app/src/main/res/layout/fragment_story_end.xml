@@ -7,29 +7,55 @@
     tools:context=".StoryEndFragment">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/final_text_header"
+            style="@style/HeaderText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/HeaderText"
             android:text="@string/hello_blank_fragment" />
 
         <TextView
             android:id="@+id/final_text"
+            style="@style/StoryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/StoryText"
             android:text="@string/hello_blank_fragment"
             tools:text="final text" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/key_decisions_text"
+            style="@style/HeaderText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="30dp"
@@ -37,8 +63,8 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-            style="@style/CustomButton"
             android:id="@+id/next_story_button"
+            style="@style/CustomButton"
             android:layout_width="match_parent"
             android:text="NEXT STORY" />
 
