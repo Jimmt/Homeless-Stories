@@ -1,24 +1,148 @@
 {
-	"index": 1,
-	"name": "Bob",
-	"type": "Builder",
+	"index": 2,
+	"name": "Twigg",
+	"type": "Athlete ",
 	"preview": "Preview",
 	"decisions": [
 	  {
 		"image": "placeholder",
-		"decisionText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+		"decisionText": "At 15 years old, Twigg was given an option to leave her family and live by herself.",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Stay with family",
+			"answerText": "We don’t know about Twiggs complex relationship with her family but she decided that leaving her family home would be better for her long term growth and aspirations."
+		  },
+		  {
+			"real":true,
+			"answer": "Leave family"
+		  }
+		]
+	  },
+   {
+		"image": "placeholder",
+		"decisionText": "Twigg Decided to leave home and stayed at a bus station and the public library during her time at the University. Here she became a successful biker and participated in national competitions. The next years — as Twigg became a cycling star — were transient. She went from friends’ houses to hotels on the road while racing. Her hard work was paying off and she was selected to participate in the 1984 Olympics.",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Stay at school and continue to pursue a technical degree",
+			"answerText": "Her talents were being wasted. She wanted to pursue her dreams of being a professional cyclist."
+		  },
+		  {
+			"real":true,
+			"answer": "Move in to the Olympic Training Center in Colorado Springs and train for the 1984 Olympic Games, where for the first time, women would be competing on bicycles."
+		  }
+		]
+	  },
+
+ {
+		"image": "placeholder",
+		"decisionText": "Twigg won a silver medal, missing gold by a few inches to famous racer Connie Carpenter. She continued on her way up over the next several years, setting world records, winning world titles, and racing more than 60 times a year. Unfortunately she got into an accident and broke her thumb while racing in Texas.",
 		"answers": [
 		  {
 			"real": true,
-			"answer": "No",
-			"answerText": "Answer Text"
+			"answer": "Take a break to heal"
 		  },
 		  {
 			"real": false,
-			"answer": "Yes"
+			"answer": "Keep cycling",
+			"answerText": "She felt burnt out and needed to take a break from cycling."
 		  }
 		]
-	  }
+	  },
+ {
+		"image": "placeholder",
+		"decisionText": "During her break, she worked towards an Associate’s degree in Computer Science.",
+		"answers": [
+		  {
+			"real": true,
+			"answer": "Accept a position in a different city as a programmer"
+		  },
+		  {
+			"real":false,
+			"answer": "Keep looking for a job in Seattle where family and friends are",	
+			"answerText": "84,426 people are unemployed in Seattle as of February 2019."
+		  }
+		]
+	},
+	 {
+		"image": "placeholder",
+		"decisionText": "Twig moved to San Diego to work as a computer programer for a seaweed company.",
+		"answers": [
+		  {
+			"real": true,
+			"answer": "Go back to training for biking"
+		  },
+		  {
+			"real":false,
+			"answer": "Continue working hard as a software engineer",	
+			"answerText": "Twigg disliked her job and felt that she had given up her dreams."
+		  }
+		]
+	},
+  {
+		"image": "placeholder",
+		"decisionText": "Twigg trains hard, cycling every day for 9 months, and successfully works her way into the 1992 Olympics. She wins a bronze medal in the 3,000-meter pursuit. However, her age is catching up with her.",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Keep biking competitively",	
+			"answerText": "Twigg felt pressured from the U.S Cycling Federation to succeed, and at the same time was also getting older and not having as much success on the track."
+		  },
+		  {
+			"real":true,
+			"answer": "Retire for good"
+		  }
+		]
+	},
+	{
+		"image": "placeholder",
+		"decisionText": "In 1997, Twigg placed 8th in a world championship race and decided to retire for good.",
+		"answers": [
+		  {
+			"real": true,
+			"answer": "Find an IT desk job"
+		  },
+		  {
+			"real":false,
+			"answer": "Keep cycling recreationally with little income from a part time job",
+      "answerText":"The average monthly pay for part time jobs in the U.S is $2,274 a month which is difficult given the multitude of life’s expenses such as rent, food, utilities, and car."
+		  }
+		]
+	},
+  {
+		"image": "placeholder",
+		"decisionText": "Twigg successfully found an IT desk job. As a formerly successful athlete, the lifestyle of a desk job did not suit her. At one point, she didn’t show up to work for 4 days straight. She thinks that the boss will fire her. What do you think she did?",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Keep working and hope she doesn’t get fired.",	
+			"answerText": "Twigg doesn’t like working alone in solitude, and given her background as a successful athlete, she could not grow accustomed to her new routine, regimental lifestyle."
+		  },
+		  {
+			"real":true,
+			"answer": "Quit and try to find new job"
+		  }
+		]
+	},
+  {
+  "image": "placeholder",
+		"decisionText": "Twigg had anxiety from job searching, and was now in her 50’s where her technical skills were generally less relevant to industry. The average software engineering age in Seattle is 35 years old.  She couldn’t find a job, had no back up money saved and kicked out of her apartment. She was now homeless in Seattle. She’s cycled her whole life, do you think she gave the bike away?",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Keep the bike.",	
+			"answerText": "Keeping a bike was no longer practical, it made her sweaty when warm and wet when raining."
+		  },
+		  {
+			"real":true,
+			"answer": "Give bike away"
+		  }
+		]
+	}
 	],
-	"finalText": "Bob final"
+	"finalText": "Twigg had to give up her dreams for survival. Without a bike, she walks slowly to conserve energy and lives from shelter to shelter. According to Count Us In, a one-night comprehensive snapshot of homelessness in King County, the top reason one is homeless is due to losing a job at 25%. Anything can happen to anyone at any time, even for a professional cyclist who was once regarded as one of the most decorated female cyclists in the United States."
 }
+
+
+
