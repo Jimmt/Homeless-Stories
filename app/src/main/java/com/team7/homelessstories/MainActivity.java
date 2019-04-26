@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 public class MainActivity extends AppCompatActivity implements FragmentInteractionListener {
     private NavigationView navigationView;
     private DrawerLayout drawer;
+    private Menu drawerMenu;
     private TextView toolbarTitle;
 
     @Override
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
         drawer = (DrawerLayout) findViewById(R.id.drawer);
         navigationView = (NavigationView) findViewById(R.id.navigation);
+        drawerMenu = navigationView.getMenu();
         setupDrawerContent(drawer);
 
         toolbarTitle = drawer.findViewById(R.id.toolbar_title);
@@ -60,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     private void selectDrawerItem(MenuItem menuItem) {
+        if(drawerMenu.findItem(menuItem.getItemId()).isChecked()){
+            return;
+        }
         Fragment fragment = null;
         Class fragmentClass = null;
         switch (menuItem.getItemId()) {
@@ -85,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
         // Insert the fragment by replacing any existing fragment
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.frame_layout, fragment).commit();
+                .replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
 
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
