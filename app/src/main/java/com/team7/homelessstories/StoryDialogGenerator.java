@@ -20,7 +20,7 @@ public class StoryDialogGenerator {
 
         new AlertDialog.Builder(container.getContext())
                 .setTitle("Read " + story.getName() + "'s Story")
-                .setMessage("Preview description")
+                .setMessage(story.getPreview())
                 .setPositiveButton("Read", buttonListener)
                 .setNegativeButton("Cancel", null)
                 .create().show();
