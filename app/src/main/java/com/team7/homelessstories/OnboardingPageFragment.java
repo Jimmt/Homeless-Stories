@@ -57,17 +57,18 @@ public class OnboardingPageFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         if (getArguments() != null) {
             text = getArguments().getString(ARG_TEXT);
             headerText = getArguments().getString(ARG_HEADER_TEXT);
             imageId = getArguments().getInt(ARG_IMAGE_ID);
             lastPage = getArguments().getBoolean(ARG_LAST_PAGE);
         }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_page_onboarding, container, false);
         TextView tv = (TextView) view.findViewById(R.id.text_view);

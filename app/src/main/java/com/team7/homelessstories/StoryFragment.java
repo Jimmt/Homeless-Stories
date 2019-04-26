@@ -16,6 +16,7 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -56,10 +57,6 @@ public class StoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            story = (Story) getArguments().get(ARG_STORY);
-            decisionIndex = getArguments().getInt(ARG_DECISION_INDEX);
-        }
         setHasOptionsMenu(true);
     }
 
@@ -86,10 +83,14 @@ public class StoryFragment extends Fragment {
         }
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if (getArguments() != null) {
+            story = (Story) getArguments().get(ARG_STORY);
+            decisionIndex = getArguments().getInt(ARG_DECISION_INDEX);
+        }
+
         this.container = container;
         View view = inflater.inflate(R.layout.fragment_story, container, false);
 
@@ -135,7 +136,8 @@ public class StoryFragment extends Fragment {
 
                     Fragment frag = null;
                     if (decisionIndex < story.getDecisions().size() - 1) {
-                        frag = StoryFragment.newInstance(story, ++decisionIndex);
+                        decisionIndex++;
+                        frag = StoryFragment.newInstance(story, decisionIndex);
                     } else {
                         frag = StoryEndFragment.newInstance(story);
                     }
@@ -145,7 +147,13 @@ public class StoryFragment extends Fragment {
                     fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
                             .replace(container.getId(), frag)
-                            .addToBackStack(null).commit();
+                            .addToBackStack("Index " + decisionIndex).commit();
+
+                    // Print out contents of backstack for debugging
+//                    for(int i = 0; i < getActivity().getSupportFragmentManager().getBackStackEntryCount(); i++){
+//                        System.out.print(i + ": " + getActivity().getSupportFragmentManager().getBackStackEntryAt(i).getName() + ", ");
+//                    }
+//                    System.out.println();
                 }
             });
         }

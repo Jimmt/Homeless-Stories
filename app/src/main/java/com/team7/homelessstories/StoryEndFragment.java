@@ -44,16 +44,22 @@ public class StoryEndFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            story = (Story) getArguments().get(ARG_STORY);
-        }
         setHasOptionsMenu(true);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
+        if (getArguments() != null) {
+            story = (Story) getArguments().get(ARG_STORY);
+        }
+
         this.container = container;
+
+        for(int i = 0; i < getActivity().getSupportFragmentManager().getBackStackEntryCount(); i++){
+            System.out.print(i + ": " + getActivity().getSupportFragmentManager().getBackStackEntryAt(i).getName() + ", ");
+        }
+        System.out.println();
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_story_end, container, false);
