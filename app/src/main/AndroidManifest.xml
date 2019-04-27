@@ -12,8 +12,7 @@
         <activity
             android:name="com.team7.homelessstories.OnboardingActivity"
             android:label="@string/title_activity_onboarding" />
-        <activity android:name="com.team7.homelessstories.MainActivity"
-            android:noHistory="true">
+        <activity android:name="com.team7.homelessstories.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

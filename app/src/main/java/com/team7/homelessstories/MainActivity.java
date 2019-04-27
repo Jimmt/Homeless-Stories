@@ -1,6 +1,7 @@
 package com.team7.homelessstories;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,17 +10,23 @@ import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
-public class MainActivity extends AppCompatActivity implements FragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements FragmentInteractionListener  {
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private Menu drawerMenu;
     private TextView toolbarTitle;
+    private boolean showDrawer = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,14 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             startActivity(intent);
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, StoriesFragment.newInstance()).commit();
+//            Story st = null;
+//            try {
+//                st = BuildStories.getStories(this).get(0);
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//            getSupportFragmentManager().beginTransaction()
+//                    .replace(R.id.frame_layout, StoryFragment.newInstance(st)).commit();
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     private void selectDrawerItem(MenuItem menuItem) {
-        if(drawerMenu.findItem(menuItem.getItemId()).isChecked()){
+        if (drawerMenu.findItem(menuItem.getItemId()).isChecked()) {
             return;
         }
         Fragment fragment = null;
@@ -102,12 +117,41 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
     @Override
     public boolean onSupportNavigateUp() {
-        drawer.openDrawer(GravityCompat.START);
+        if (showDrawer) {
+            drawer.openDrawer(GravityCompat.START);
+        } else {
+            FragmentManager fm = getSupportFragmentManager();
+            fm.beginTransaction().replace(R.id.frame_layout, StoriesFragment.newInstance())
+                    .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                    .addToBackStack(null).commit();
+            setUpButton(true);
+        }
         return super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
     }
 
     @Override
     public void updateToolbarTitle(String text) {
         toolbarTitle.setText(text);
+    }
+
+    @Override
+    public void setUpButton(boolean showDrawer) {
+        this.showDrawer = showDrawer;
+
+        if (showDrawer) {
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
+        } else {
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_24px);
+        }
     }
 }

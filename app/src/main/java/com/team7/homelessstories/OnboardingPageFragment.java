@@ -116,6 +116,11 @@ public class OnboardingPageFragment extends Fragment {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;

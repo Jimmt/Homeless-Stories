@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
@@ -59,7 +60,9 @@ public class StoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+//        setHasOptionsMenu(true);
+//        setRetainInstance(true);
+        listener.setUpButton(false);
     }
 
     @Override
@@ -101,8 +104,22 @@ public class StoryFragment extends Fragment {
         buttonContainer = view.findViewById(R.id.button_container);
         // Remove buttons put there for UI testing in-IDE.
         buttonContainer.removeAllViews();
-
+//
         displayDecision(inflater);
+//
+//        ((TextView) view.findViewById(R.id.decision_text)).setText("" + decisionIndex);
+//
+//        if(decisionIndex < 1){
+//            System.out.println("running");
+//            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//            decisionIndex = decisionIndex + 1;
+//            fragmentManager.beginTransaction()
+//                    .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+//                    .replace(container.getId(), StoryFragment.newInstance(story, decisionIndex))
+//                    .addToBackStack(null).commit();
+//        }
+//
+
         listener.updateToolbarTitle(story.getName() + "'s Story");
 
         MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);
@@ -149,12 +166,12 @@ public class StoryFragment extends Fragment {
                         frag = StoryEndFragment.newInstance(story);
                     }
 
-                    // Might need an intermediary screen instead of jumping between decisions quickly
+//                     Might need an intermediary screen instead of jumping between decisions quickly
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
                             .replace(container.getId(), frag)
-                            .addToBackStack(null).commit();
+                            .commit();
 
                 }
             });
@@ -168,7 +185,7 @@ public class StoryFragment extends Fragment {
             listener = (FragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement StoryFragmentInteractionListener");
+                    + " must implement FragmentInteractionListener");
         }
     }
 
