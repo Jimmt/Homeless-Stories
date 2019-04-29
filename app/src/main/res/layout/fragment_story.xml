@@ -65,7 +65,8 @@
             android:id="@+id/button"
             style="@style/CustomButton"
             android:layout_width="match_parent"
-            android:text="BUTTON" />
+            android:layout_height="wrap_content"
+            android:text="BUTTON BUTTON BUTTON BUTTON BUTTON BUTTON" />
     </LinearLayout>
 
 
