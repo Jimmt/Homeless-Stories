@@ -171,6 +171,7 @@ public class StoryFragment extends Fragment {
                     fragmentManager.beginTransaction()
                             .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
                             .replace(container.getId(), frag)
+                            .addToBackStack(null)
                             .commit();
 
                 }
