@@ -99,26 +99,13 @@ public class StoryFragment extends Fragment {
         this.container = container;
         View view = inflater.inflate(R.layout.fragment_story, container, false);
 
-        storyImage = view.findViewById(R.id.story_image);
+//        storyImage = view.findViewById(R.id.story_image);
         text = view.findViewById(R.id.decision_text);
         buttonContainer = view.findViewById(R.id.button_container);
         // Remove buttons put there for UI testing in-IDE.
         buttonContainer.removeAllViews();
 //
         displayDecision(inflater);
-//
-//        ((TextView) view.findViewById(R.id.decision_text)).setText("" + decisionIndex);
-//
-//        if(decisionIndex < 1){
-//            System.out.println("running");
-//            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//            decisionIndex = decisionIndex + 1;
-//            fragmentManager.beginTransaction()
-//                    .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-//                    .replace(container.getId(), StoryFragment.newInstance(story, decisionIndex))
-//                    .addToBackStack(null).commit();
-//        }
-//
 
         listener.updateToolbarTitle(story.getName() + "'s Story");
 
@@ -135,8 +122,8 @@ public class StoryFragment extends Fragment {
     private void displayDecision(LayoutInflater inflater) {
         Decision decision = story.getDecisions().get(decisionIndex);
 
-        int imageId = getResources().getIdentifier(decision.getImageName(), "drawable", getContext().getPackageName());
-        storyImage.setImageResource(imageId);
+//        int imageId = getResources().getIdentifier(decision.getImageName(), "drawable", getContext().getPackageName());
+//        storyImage.setImageResource(imageId);
         text.setText(decision.getDecisionText());
 
         ArrayList<Answer> answers = story.getDecisions().get(decisionIndex).getAnswers();

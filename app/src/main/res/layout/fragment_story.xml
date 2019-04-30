@@ -7,32 +7,12 @@
     android:weightSum="100"
     tools:context=".StoryFragment">
 
-    <ImageView
-        android:id="@+id/story_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="Image representing decision"
-        android:maxHeight="200dp"
-        android:src="@drawable/placeholder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/placeholder" />
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
         android:layout_weight="50"
-        app:layout_constraintBottom_toTopOf="@+id/button_container"
-        app:layout_constraintTop_toBottomOf="@+id/story_image">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/decision_text"
@@ -40,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:paddingTop="@dimen/story_horizontal_margin"
             android:text="AOWEIFJAWEOIFJAOWIFJAWIOWJFOAIFJWEIFJOFIJWEIOFJAIWFJIOEFJWIOFJAWIOFJA AEFJOAWIEFJAWIO faweOJFI Awoeif aweiFJaeWIOFJaweIOF JAEW"
             tools:layout_editor_absoluteY="231dp" />
     </ScrollView>
