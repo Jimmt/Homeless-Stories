@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp"
+            android:paddingBottom="0dp"
             android:text="TextView" />
 
         <TextView
@@ -46,8 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/hello_blank_fragment"
-            tools:layout_editor_absoluteY="704dp" />
+            android:paddingTop="0dp"
+            android:text="@string/hello_blank_fragment" />
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"

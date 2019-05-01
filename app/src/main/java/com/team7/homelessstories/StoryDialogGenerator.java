@@ -30,8 +30,8 @@ public class StoryDialogGenerator {
 
         dialog.show();
 
-        TextView messageText = dialog.findViewById(android.R.id.message);
-        Typeface face = ResourcesCompat.getFont(activity, R.font.open_sans_regular);
-        messageText.setTypeface(face);
+//        TextView messageText = dialog.findViewById(android.R.id.message);
+//        Typeface face = ResourcesCompat.getFont(activity, R.font.open_sans_regular);
+//        messageText.setTypeface(face);
     }
 }
