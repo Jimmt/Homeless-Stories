@@ -155,8 +155,9 @@ public class StoryEndFragment extends Fragment {
         @Override
         public Object instantiateItem(ViewGroup collection, int position) {
             ImageView iv = new ImageView(context);
-            int imageId = getResources().getIdentifier(story.getDecisions().get(position).getImageName(), "drawable", getContext().getPackageName());
-            iv.setImageResource(imageId);
+//            int imageId = getResources().getIdentifier(story.getDecisions().get(position).getImageName(), "drawable", getContext().getPackageName());
+//            iv.setImageResource(imageId);
+            iv.setImageResource(R.drawable.placeholder);
             collection.addView(iv);
             return iv;
         }

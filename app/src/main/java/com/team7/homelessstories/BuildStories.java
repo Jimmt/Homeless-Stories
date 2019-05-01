@@ -61,7 +61,7 @@ public class BuildStories {
                     answers.add(a);
                 }
 
-                Decision d = new Decision(decision.getString("decisionText"), decision.getString("image"), answers);
+                Decision d = new Decision(decision.getString("decisionText"), answers);
                 decisions.add(d);
             }
 
@@ -158,16 +158,12 @@ class Story implements Serializable, Comparable {
 
 class Decision implements Serializable {
     private String decisionText;
-    private String imageName;
     private ArrayList<Answer> answers;
 
-    public Decision(String decisionText, String imageName, ArrayList<Answer> answers) {
+    public Decision(String decisionText, ArrayList<Answer> answers) {
         this.decisionText = decisionText;
         this.answers = answers;
-        this.imageName = imageName;
     }
-
-    public String getImageName() { return imageName; }
 
     public String getDecisionText() {
         return decisionText;

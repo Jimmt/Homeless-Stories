@@ -5,7 +5,6 @@
 	"preview": "Twigg started cycling at the age of 7. She enrolled in UW when 14 years old and was a prodigious student and athlete. In addition to her studies, she competed and won medals in national races.",
 	"decisions": [
 	  {
-		"image": "placeholder",
 		"decisionText": "At 15 years old, Twigg was given an option to leave her family and live by herself.",
 		"answers": [
 		  {
@@ -20,8 +19,7 @@
 		]
 	  },
    {
-		"image": "placeholder",
-		"decisionText": "Twigg Decided to leave home and stayed at a bus station and the public library during her time at the University. Here she became a successful biker and participated in national competitions. The next years — as Twigg became a cycling star — were transient. She went from friends’ houses to hotels on the road while racing. Her hard work was paying off and she was selected to participate in the 1984 Olympics.",
+		"decisionText": "Twigg decided to leave home and stayed at a bus station and the public library during her time at the University. Here she became a successful biker and participated in national competitions. The next years — as Twigg became a cycling star — were transient. She went from friends’ houses to hotels on the road while racing. Her hard work was paying off and she was selected to participate in the 1984 Olympics.",
 		"answers": [
 		  {
 			"real": false,
@@ -36,7 +34,6 @@
 	  },
 
  {
-		"image": "placeholder",
 		"decisionText": "Twigg won a silver medal, missing gold by a few inches to famous racer Connie Carpenter. She continued on her way up over the next several years, setting world records, winning world titles, and racing more than 60 times a year. Unfortunately she got into an accident and broke her thumb while racing in Texas.",
 		"answers": [
 		  {
@@ -51,7 +48,6 @@
 		]
 	  },
  {
-		"image": "placeholder",
 		"decisionText": "During her break, she worked towards an Associate’s degree in Computer Science.",
 		"answers": [
 		  {
@@ -66,7 +62,6 @@
 		]
 	},
 	 {
-		"image": "placeholder",
 		"decisionText": "Twig moved to San Diego to work as a computer programer for a seaweed company.",
 		"answers": [
 		  {
@@ -81,7 +76,6 @@
 		]
 	},
   {
-		"image": "placeholder",
 		"decisionText": "Twigg trains hard, cycling every day for 9 months, and successfully works her way into the 1992 Olympics. She wins a bronze medal in the 3,000-meter pursuit. However, her age is catching up with her.",
 		"answers": [
 		  {
@@ -96,7 +90,6 @@
 		]
 	},
 	{
-		"image": "placeholder",
 		"decisionText": "In 1997, Twigg placed 8th in a world championship race and decided to retire for good.",
 		"answers": [
 		  {
@@ -111,7 +104,6 @@
 		]
 	},
   {
-		"image": "placeholder",
 		"decisionText": "Twigg successfully found an IT desk job. As a formerly successful athlete, the lifestyle of a desk job did not suit her. At one point, she didn’t show up to work for 4 days straight. She thinks that the boss will fire her. What do you think she did?",
 		"answers": [
 		  {
@@ -126,7 +118,6 @@
 		]
 	},
   {
-  "image": "placeholder",
 		"decisionText": "Twigg had anxiety from job searching, and was now in her 50’s where her technical skills were generally less relevant to industry. The average software engineering age in Seattle is 35 years old.  She couldn’t find a job, had no back up money saved and kicked out of her apartment. She was now homeless in Seattle. She’s cycled her whole life, do you think she gave the bike away?",
 		"answers": [
 		  {
