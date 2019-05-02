@@ -34,4 +34,5 @@ dependencies {
     implementation 'me.relex:circleindicator:2.1.0'
     implementation 'com.google.android.material:material:1.0.0-rc01'
     implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 }

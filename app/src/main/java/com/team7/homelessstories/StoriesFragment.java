@@ -13,11 +13,15 @@ import android.widget.TextView;
 
 import com.google.android.material.card.MaterialCardView;
 
+import net.cachapa.expandablelayout.ExpandableLayout;
+
 import org.json.JSONException;
 
 import java.util.ArrayList;
 
 import androidx.fragment.app.Fragment;
+import androidx.transition.Scene;
+import androidx.transition.TransitionManager;
 
 
 public class StoriesFragment extends Fragment {
@@ -45,10 +49,11 @@ public class StoriesFragment extends Fragment {
 
         addStoryCards(view, inflater, container);
         listener.updateToolbarTitle("Stories");
+        listener.setUpButton(true);
         return view;
     }
 
-    private void addStoryCards(View view, LayoutInflater inflater, final ViewGroup container) {
+    private void addStoryCards(View view, final LayoutInflater inflater, final ViewGroup container) {
         ArrayList<Story> stories = new ArrayList<>();
         try {
             stories = BuildStories.getStories(view.getContext());
@@ -62,15 +67,25 @@ public class StoriesFragment extends Fragment {
             final Story story = stories.get(i);
 
             View v = inflater.inflate(R.layout.story_card, storiesContainer);
-            MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
+            final MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
+            final View divider = mcv.findViewById(R.id.divider);
+            final ExpandableLayout el = mcv.findViewById(R.id.expandable_layout);
 
+            ((TextView) el.findViewById(R.id.preview_text)).setText(story.getPreview());
             ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
             ((TextView) mcv.findViewById(R.id.story_type)).setText(story.getType());
 
             mcv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StoryDialogGenerator.showDialog(getActivity(), container, story);
+                    el.toggle();
+                    if(el.isExpanded()){
+                        divider.setVisibility(View.VISIBLE);
+                    } else {
+                        divider.setVisibility(View.GONE);
+                    }
+//                    TransitionManager.beginDelayedTransition(mcv);
+//                    StoryDialogGenerator.showDialog(getActivity(), container, story);
                 }
             });
         }
