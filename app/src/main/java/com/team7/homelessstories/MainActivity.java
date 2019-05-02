@@ -121,8 +121,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             drawer.openDrawer(GravityCompat.START);
         } else {
             FragmentManager fm = getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.frame_layout, StoriesFragment.newInstance())
-                    .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+            fm.beginTransaction()
+                    .setCustomAnimations(R.anim.fade_in, R.anim.slide_down)
+                    .replace(R.id.frame_layout, StoriesFragment.newInstance())
                     .addToBackStack(null).commit();
             setUpButton(true);
         }
@@ -137,6 +138,11 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
     }
 
     @Override

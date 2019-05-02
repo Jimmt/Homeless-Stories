@@ -76,6 +76,7 @@ public class StoryFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.action_cancel:
                 // Go back to stories fragment
+                // TODO change if necessary
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 fm.beginTransaction().replace(container.getId(), StoriesFragment.newInstance())
                         .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
@@ -153,10 +154,9 @@ public class StoryFragment extends Fragment {
                         frag = StoryEndFragment.newInstance(story);
                     }
 
-//                     Might need an intermediary screen instead of jumping between decisions quickly
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     fragmentManager.beginTransaction()
-                            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                            .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
                             .replace(container.getId(), frag)
                             .addToBackStack(null)
                             .commit();

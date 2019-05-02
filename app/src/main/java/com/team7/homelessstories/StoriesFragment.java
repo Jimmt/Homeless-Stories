@@ -1,13 +1,20 @@
 package com.team7.homelessstories;
 
 
+import android.animation.Animator;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,8 +28,15 @@ import java.util.ArrayList;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.transition.Fade;
 import androidx.transition.Scene;
+import androidx.transition.Slide;
+import androidx.transition.Transition;
 import androidx.transition.TransitionManager;
+import androidx.transition.TransitionPropagation;
+import androidx.transition.TransitionSet;
+import androidx.transition.TransitionValues;
+import androidx.transition.Visibility;
 
 
 public class StoriesFragment extends Fragment {
@@ -80,8 +94,13 @@ public class StoriesFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    StoryFragment frag = StoryFragment.newInstance(story);
+
                     fragmentManager.beginTransaction()
-                            .replace(container.getId(), StoryFragment.newInstance(story)).addToBackStack(null).commit();
+                            .setCustomAnimations(R.anim.slide_up, R.anim.fade_out, R.anim.fade_in, R.anim.slide_down)
+                            .replace(container.getId(), frag)
+                            .addToBackStack(null)
+                            .commit();
                 }
             });
 
