@@ -7,6 +7,18 @@
     android:weightSum="100"
     tools:context=".StoryFragment">
 
+    <TextView
+        android:id="@+id/decision_header_text"
+        style="@style/HeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -14,7 +26,7 @@
         android:layout_marginBottom="8dp"
         android:layout_weight="50"
         app:layout_constraintBottom_toTopOf="@+id/button_container"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/decision_header_text">
 
         <TextView
             android:id="@+id/decision_text"
@@ -22,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:paddingTop="@dimen/story_horizontal_margin"
             android:text="AOWEIFJAWEOIFJAOWIFJAWIOWJFOAIFJWEIFJOFIJWEIOFJAIWFJIOEFJWIOFJAWIOFJA AEFJOAWIEFJAWIO faweOJFI Awoeif aweiFJaeWIOFJaweIOF JAEW"
             tools:layout_editor_absoluteY="231dp" />
     </ScrollView>
