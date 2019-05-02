@@ -20,6 +20,7 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.transition.Scene;
 import androidx.transition.TransitionManager;
 
@@ -75,19 +76,40 @@ public class StoriesFragment extends Fragment {
             ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
             ((TextView) mcv.findViewById(R.id.story_type)).setText(story.getType());
 
+            ((TextView) mcv.findViewById(R.id.read_button)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(container.getId(), StoryFragment.newInstance(story)).addToBackStack(null).commit();
+                }
+            });
+
+            ((TextView) mcv.findViewById(R.id.cancel_button)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    el.collapse();
+                    divider.setVisibility(View.GONE);
+                }
+            });
+
             mcv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    el.toggle();
-                    if(el.isExpanded()){
-                        divider.setVisibility(View.VISIBLE);
-                    } else {
-                        divider.setVisibility(View.GONE);
-                    }
+                    toggle(el, divider);
 //                    TransitionManager.beginDelayedTransition(mcv);
 //                    StoryDialogGenerator.showDialog(getActivity(), container, story);
                 }
             });
+        }
+    }
+
+    public void toggle(ExpandableLayout el, View divider){
+        el.toggle();
+        if (el.isExpanded()) {
+            divider.setVisibility(View.VISIBLE);
+        } else {
+            divider.setVisibility(View.GONE);
         }
     }
 
