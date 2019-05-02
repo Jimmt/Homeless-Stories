@@ -80,7 +80,9 @@
             android:id="@+id/read_more_button"
             style="@style/CustomOutlineButton"
             android:layout_width="match_parent"
-            android:text="READ MORE" />
+            android:text="READ MORE"
+            android:textColor="@color/colorPrimary"
+            app:strokeColor="@color/colorPrimary" />
 
     </LinearLayout>
 
