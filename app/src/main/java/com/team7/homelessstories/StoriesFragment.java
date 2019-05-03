@@ -15,6 +15,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -78,6 +79,8 @@ public class StoriesFragment extends Fragment {
 
         LinearLayout storiesContainer = view.findViewById(R.id.stories_container);
 
+        int[] drawableIds = {R.drawable.ic_jazz, R.drawable.ic_twigg};
+
         for (int i = 0; i < stories.size(); i++) {
             final Story story = stories.get(i);
 
@@ -85,6 +88,9 @@ public class StoriesFragment extends Fragment {
             final MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
             final View divider = mcv.findViewById(R.id.divider);
             final ExpandableLayout el = mcv.findViewById(R.id.expandable_layout);
+
+            ImageView image = mcv.findViewById(R.id.person_image);
+            image.setImageResource(drawableIds[i]);
 
             ((TextView) el.findViewById(R.id.preview_text)).setText(story.getPreview());
             ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());

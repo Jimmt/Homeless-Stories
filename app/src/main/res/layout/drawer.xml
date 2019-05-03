@@ -16,12 +16,12 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize">
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPage">
 
                 <TextView
                     android:id="@+id/toolbar_title"
                     style="@style/HeaderText"
-                    android:fontFamily="@font/brandon_light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
