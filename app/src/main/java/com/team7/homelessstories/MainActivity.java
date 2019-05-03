@@ -40,14 +40,6 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             startActivity(intent);
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, StoriesFragment.newInstance()).commit();
-//            Story st = null;
-//            try {
-//                st = BuildStories.getStories(this).get(0);
-//            } catch (JSONException e) {
-//                e.printStackTrace();
-//            }
-//            getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.frame_layout, StoryFragment.newInstance(st)).commit();
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -78,22 +70,24 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
     private void selectDrawerItem(MenuItem menuItem) {
         if (drawerMenu.findItem(menuItem.getItemId()).isChecked()) {
+            drawer.closeDrawers();
             return;
         }
         Fragment fragment = null;
         Class fragmentClass = null;
+
         switch (menuItem.getItemId()) {
             case R.id.stories:
                 fragmentClass = StoriesFragment.class;
                 break;
             case R.id.about:
-
+                fragmentClass = AboutFragment.class;
                 break;
             case R.id.donate:
-
+                fragmentClass = DonateFragment.class;
                 break;
             case R.id.sources:
-
+                fragmentClass = SourcesFragment.class;
                 break;
         }
 
