@@ -19,8 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_heart" />
-                            <entry key="sourceFile" value="C:\Users\austi\Downloads\heart.svg" />
+                            <entry key="height" value="144" />
+                            <entry key="outputName" value="ic_walk" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="C:\Users\austi\Downloads\onboarding\walk.svg" />
+                            <entry key="width" value="182" />
                           </map>
                         </option>
                       </PersistentState>

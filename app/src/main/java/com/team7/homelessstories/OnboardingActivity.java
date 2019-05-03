@@ -49,9 +49,10 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
             String[] bodyText = {"12,112 people are experiencing homelessness in Seattle, which is a 4% increase from 2017.",
                     "Experience interactive, decision-based story telling to understand and reflect on a commonly misunderstood population.",
                     "Make a difference by lending a hand to homeless individuals and families in Seattle."};
+            int[] drawableIds = {R.drawable.space_needle, R.drawable.walk, R.drawable.volunteer};
 
             for (int i = 0; i < NUM_PAGES; i++) {
-                pages[i] = OnboardingPageFragment.newInstance(R.drawable.placeholder, headerText[i],bodyText[i],
+                pages[i] = OnboardingPageFragment.newInstance(drawableIds[i], headerText[i],bodyText[i],
                         i == NUM_PAGES - 1 ? true : false);
             }
         }
