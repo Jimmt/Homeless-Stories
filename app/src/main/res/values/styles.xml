@@ -58,6 +58,7 @@
 
     <style name="StoryHeaderText" parent="@style/HeaderText">
         <item name="android:textSize">@dimen/story_header_text_size</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="BigText" parent="android:Widget.TextView">

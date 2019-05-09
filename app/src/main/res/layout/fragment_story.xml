@@ -10,14 +10,12 @@
 
     <TextView
         android:id="@+id/decision_header_text"
-        style="@style/HeaderText"
+        style="@style/StoryHeaderText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:text="TextView"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/story_header_text_size"
         app:layout_constraintEnd_toStartOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

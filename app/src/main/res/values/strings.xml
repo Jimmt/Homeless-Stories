@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Paths</string>
     <string name="title_activity_onboarding">OnboardingActivity</string>
+    <string name="about_text">PATHS explores and tackles misconceptions and common stereotypes about homelessness in Seattle. This project builds empathy with the homeless community using
+    visual, interactive stories based on real events and issues that have been anonymized. By offering different perspectives in the lives and struggles of homeless individuals, or those who
+    work closely with the homeless, PATHS guides users into other people\'s shoes. With empathy, people are better equipped to advocate, donate, and engage with this systematic issue.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

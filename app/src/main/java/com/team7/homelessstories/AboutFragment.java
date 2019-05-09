@@ -36,7 +36,7 @@ public class AboutFragment extends ListenerFragment {
         super.onCreateView(inflater, container, savedInstanceState);
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_donate, container, false);
+        View view = inflater.inflate(R.layout.fragment_about, container, false);
 
         listener.setToolbarStyle(true);
         return view;

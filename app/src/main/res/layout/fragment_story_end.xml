@@ -17,11 +17,9 @@
 
         <TextView
             android:id="@+id/final_text_header"
-            style="@style/HeaderText"
-            android:textSize="@dimen/story_header_text_size"
+            style="@style/StoryHeaderText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
             android:text="@string/hello_blank_fragment" />
 
         <ScrollView
