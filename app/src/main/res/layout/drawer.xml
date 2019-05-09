@@ -8,9 +8,9 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -28,14 +28,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:letterSpacing="@dimen/logo_letter_spacing"
                 android:paddingLeft="@dimen/story_horizontal_margin"
                 android:paddingTop="0dp"
                 android:paddingRight="@dimen/story_horizontal_margin"
                 android:paddingBottom="0dp"
-                android:letterSpacing="@dimen/logo_letter_spacing"
                 android:text="Stories" />
 
         </androidx.appcompat.widget.Toolbar>
+
         <FrameLayout
             android:id="@+id/frame_layout"
             android:layout_width="match_parent"

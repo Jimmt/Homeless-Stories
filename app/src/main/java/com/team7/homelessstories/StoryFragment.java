@@ -117,8 +117,8 @@ public class StoryFragment extends Fragment {
         // Google Forms does it this way, where at step one you are at 1 / n progress, not 0 / n.
         progressBar.setProgress((int) ((decisionIndex + 1.0) / story.getDecisions().size() * 100));
 
-        TextView progressIndicatorText = view.findViewById(R.id.progress_indicator);
-        progressIndicatorText.setText((decisionIndex + 1) + " of " + story.getDecisions().size());
+//        TextView progressIndicatorText = view.findViewById(R.id.progress_indicator);
+//        progressIndicatorText.setText((decisionIndex + 1) + " of " + story.getDecisions().size());
         return view;
     }
 
@@ -137,6 +137,11 @@ public class StoryFragment extends Fragment {
             MaterialButton button = (MaterialButton) buttonContainer.getChildAt(i);
 
             button.setText(answer.getAnswer());
+            if(i == answers.size() - 1){
+                LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) button.getLayoutParams();
+                lp.bottomMargin = 0;
+                button.setLayoutParams(lp);
+            }
 
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -159,11 +164,10 @@ public class StoryFragment extends Fragment {
 
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     fragmentManager.beginTransaction()
-                            .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
+                            .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
                             .replace(container.getId(), frag)
                             .addToBackStack(null)
                             .commit();
-
                 }
             });
         }

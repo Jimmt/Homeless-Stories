@@ -9,6 +9,11 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:actionButtonStyle">@style/ActionButton</item>
+    </style>
+
+    <style name="ActionButton" parent="@android:style/Widget.ActionButton">
+        <item name="android:drawablePadding">@dimen/story_horizontal_margin</item>
     </style>
 
     <style name="CustomButton" parent="Widget.MaterialComponents.Button">

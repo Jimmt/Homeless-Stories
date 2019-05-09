@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="transition_animation_time">250</integer>
+    <integer name="transition_animation_time">400</integer>
 </resources>

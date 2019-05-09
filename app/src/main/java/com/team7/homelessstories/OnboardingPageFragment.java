@@ -87,7 +87,7 @@ public class OnboardingPageFragment extends Fragment {
             startButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Utils.getPrefs(getContext()).edit().putBoolean("onboarding_complete", true).commit();
+                    Utils.getPrefs(getContext()).edit().putBoolean("onboarding_complete", true).apply();
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     startActivity(intent);
                 }

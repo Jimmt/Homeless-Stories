@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             toolbarTitle.setTypeface(face);
             toolbarTitle.setLetterSpacing(0);
 
-            toolbarTitle.setTextColor(Color.BLACK);
+            toolbarTitle.setTextColor(ContextCompat.getColor(this, R.color.lightGray));
         }
     }
 }

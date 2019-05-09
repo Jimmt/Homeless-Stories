@@ -28,7 +28,7 @@ public class OnboardingActivity extends FragmentActivity implements OnboardingPa
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(pager);
 
-        Utils.getPrefs(this).edit().putBoolean("onboarding_complete", false);
+        Utils.getPrefs(this).edit().putBoolean("onboarding_complete", false).apply();
     }
 
     @Override
