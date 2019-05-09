@@ -53,14 +53,27 @@ public class SourcesFragment extends ListenerFragment {
 
         LinearLayout storySourcesContainer = view.findViewById(R.id.story_sources_container);
         String[] storySources = getSources(R.raw.story_sources);
-        for (int i = 0; i < storySources.length; i++) {
-            inflater.inflate(R.layout.source_entry, storySourcesContainer);
-            ConstraintLayout sourceEntry = (ConstraintLayout) storySourcesContainer.getChildAt(i);
+        generateEntries(inflater, storySourcesContainer, R.drawable.ic_story, storySources);
 
-            int openIndex = storySources[i].indexOf("<b>");
-            int closeIndex = storySources[i].lastIndexOf("<b>");
+        LinearLayout iconSourcesContainer = view.findViewById(R.id.icon_sources_container);
+        String[] iconSources = getSources(R.raw.icon_sources);
+        generateEntries(inflater, iconSourcesContainer, R.drawable.ic_source_sm, iconSources);
 
-            String storySource = storySources[i].replace("<b>", "");
+        return view;
+    }
+
+    private void generateEntries(LayoutInflater inflater,
+                                 ViewGroup container,
+                                 int image,
+                                 String[] sources) {
+        for (int i = 0; i < sources.length; i++) {
+            inflater.inflate(R.layout.source_entry, container);
+            ConstraintLayout sourceEntry = (ConstraintLayout) container.getChildAt(i);
+
+            int openIndex = sources[i].indexOf("<b>");
+            int closeIndex = sources[i].lastIndexOf("<b>") - 3;
+
+            String storySource = sources[i].replace("<b>", "");
 
             SpannableStringBuilder builder = new SpannableStringBuilder();
 
@@ -68,25 +81,12 @@ public class SourcesFragment extends ListenerFragment {
             str.setSpan(new ForegroundColorSpan(Color.BLACK), openIndex, closeIndex, 0);
             builder.append(str);
 
+            ImageView entryImage = sourceEntry.findViewById(R.id.entry_image);
+            entryImage.setImageResource(image);
+
             TextView entryText = sourceEntry.findViewById(R.id.entry_text);
             entryText.setText(builder, TextView.BufferType.SPANNABLE);
         }
-
-
-        LinearLayout iconSourcesContainer = view.findViewById(R.id.icon_sources_container);
-        String[] iconSources = getSources(R.raw.icon_sources);
-        for (int i = 0; i < iconSources.length; i++) {
-            inflater.inflate(R.layout.source_entry, iconSourcesContainer);
-            ConstraintLayout sourceEntry = (ConstraintLayout) iconSourcesContainer.getChildAt(i);
-
-            ImageView entryImage = sourceEntry.findViewById(R.id.entry_image);
-            entryImage.setImageResource(R.drawable.ic_source_sm);
-
-            TextView entryText = sourceEntry.findViewById(R.id.entry_text);
-            entryText.setText(iconSources[i]);
-        }
-
-        return view;
     }
 
     private String[] getSources(int file) {
