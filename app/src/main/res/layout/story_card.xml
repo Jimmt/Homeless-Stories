@@ -86,10 +86,10 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/lightGray"
-            android:visibility="gone" />
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -123,6 +123,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="32dp"
+                        android:gravity="right"
                         android:orientation="horizontal">
 
                         <TextView
@@ -130,15 +131,15 @@
                             style="@style/TextButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="READ" />
+                            android:text="READ STORY" />
 
-                        <TextView
-                            android:id="@+id/cancel_button"
-                            style="@style/TextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:text="CANCEL" />
+                        <!--<TextView-->
+                            <!--android:id="@+id/cancel_button"-->
+                            <!--style="@style/TextButton"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="16dp"-->
+                            <!--android:text="CANCEL" />-->
                     </LinearLayout>
 
                 </LinearLayout>

@@ -110,13 +110,13 @@ public class StoriesFragment extends Fragment {
                 }
             });
 
-            ((TextView) mcv.findViewById(R.id.cancel_button)).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    el.collapse();
-                    divider.setVisibility(View.GONE);
-                }
-            });
+//            ((TextView) mcv.findViewById(R.id.cancel_button)).setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    el.collapse();
+//                    divider.setVisibility(View.GONE);
+//                }
+//            });
 
             mcv.setOnClickListener(new View.OnClickListener() {
                 @Override

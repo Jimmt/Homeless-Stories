@@ -3,10 +3,13 @@ package com.team7.homelessstories;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -20,7 +23,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-public class MainActivity extends AppCompatActivity implements FragmentInteractionListener  {
+public class MainActivity extends AppCompatActivity implements FragmentInteractionListener {
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private Menu drawerMenu;
@@ -34,6 +37,11 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         setContentView(R.layout.activity_main);
 
 //        Utils.getPrefs(this).edit().putBoolean("onboarding_complete", false).commit();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            View decor = getWindow().getDecorView();
+            decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
 
         if (!Utils.getPrefs(this).getBoolean("onboarding_complete", false)) {
             Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
@@ -55,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         setupDrawerContent(drawer);
 
         toolbarTitle = drawer.findViewById(R.id.toolbar_title);
+        setToolbarStyle(true);
     }
 
     private void setupDrawerContent(DrawerLayout drawer) {
@@ -135,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         super.onBackPressed();
     }
 
@@ -160,10 +169,15 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         }
     }
 
+    private void setStatusBarColor(int colorId) {
+        getWindow().setStatusBarColor(ContextCompat.getColor(this, colorId));
+    }
+
     @Override
     public void setToolbarStyle(boolean mainScreen) {
-        if(mainScreen){
+        if (mainScreen) {
             setUpButton(true);
+            setStatusBarColor(android.R.color.white);
             toolbar.setBackgroundColor(Color.WHITE);
             toolbar.setElevation(4);
             Typeface face = ResourcesCompat.getFont(this, R.font.lato_regular);
@@ -172,13 +186,21 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             TypedValue tv = new TypedValue();
             getResources().getValue(R.dimen.logo_letter_spacing, tv, true);
             toolbarTitle.setLetterSpacing(tv.getFloat());
+
+            toolbarTitle.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
         } else {
             setUpButton(false);
-            toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPage));
+
+            int pageColor = ContextCompat.getColor(this, R.color.colorPage);
+            setStatusBarColor(R.color.colorPage);
+            toolbar.setBackgroundColor(pageColor);
+
             toolbar.setElevation(0);
             Typeface face = ResourcesCompat.getFont(this, R.font.noto_serif_jp_bold);
             toolbarTitle.setTypeface(face);
             toolbarTitle.setLetterSpacing(0);
+
+            toolbarTitle.setTextColor(Color.BLACK);
         }
     }
 }
