@@ -6,5 +6,6 @@
     <dimen name="big_text_size">24sp</dimen>
     <dimen name="body_text_size">14sp</dimen>
     <dimen name="header_text_size">20sp</dimen>
+    <dimen name="story_header_text_size">32sp</dimen>
     <item name="logo_letter_spacing" format="float" type="dimen">0.2</item>
 </resources>

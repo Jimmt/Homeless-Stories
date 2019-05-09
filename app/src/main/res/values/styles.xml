@@ -23,6 +23,7 @@
         <item name="android:layout_marginRight">@dimen/story_horizontal_margin</item>
         <item name="android:layout_gravity">center</item>
         <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="cornerRadius">35dp</item>
     </style>
 
     <style name="CustomOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
@@ -31,6 +32,7 @@
         <item name="android:layout_marginLeft">@dimen/story_horizontal_margin</item>
         <item name="android:layout_marginRight">@dimen/story_horizontal_margin</item>
         <item name="android:layout_gravity">center</item>
+        <item name="cornerRadius">35dp</item>
     </style>
 
     <style name="StoryText" parent="android:Widget.TextView">
@@ -52,6 +54,10 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:fontFamily">@font/noto_serif_jp_bold</item>
         <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="StoryHeaderText" parent="@style/HeaderText">
+        <item name="android:textSize">@dimen/story_header_text_size</item>
     </style>
 
     <style name="BigText" parent="android:Widget.TextView">

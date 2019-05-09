@@ -18,6 +18,7 @@
         <TextView
             android:id="@+id/final_text_header"
             style="@style/HeaderText"
+            android:textSize="@dimen/story_header_text_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hello_blank_fragment" />

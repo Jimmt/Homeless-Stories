@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,6 +36,8 @@ public class StoryEndFragment extends Fragment {
     private int NUM_PAGES = 0;
 
     private ViewGroup container;
+
+    private FragmentInteractionListener listener;
 
     public StoryEndFragment() {
         // Required empty public constructor
@@ -68,15 +71,18 @@ public class StoryEndFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_story_end, container, false);
 
+        listener.updateToolbarTitle(story.getName() + "'s Story", Gravity.LEFT);
+        listener.setToolbarStyle(false);
+
         TextView finalTextHeader = view.findViewById(R.id.final_text_header);
-        finalTextHeader.setText(story.getName() + "'s Final Decision");
+        finalTextHeader.setText("Final Decision");
 
         TextView finalTextView = view.findViewById(R.id.final_text);
         finalTextView.setText(story.getFinalText());
 
 
         TextView keyDecisionsText = view.findViewById(R.id.key_decisions_text);
-        keyDecisionsText.setText(story.getName() + "'s Key Decisions");
+        keyDecisionsText.setText("Key Decisions");
 
         ViewPager pager = view.findViewById(R.id.view_pager);
         pager.setAdapter(new CustomPagerAdapter(getContext()));
@@ -140,6 +146,23 @@ public class StoryEndFragment extends Fragment {
                 // Invoke the superclass to handle it.
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FragmentInteractionListener) {
+            listener = (FragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement FragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 
     private class CustomPagerAdapter extends PagerAdapter {

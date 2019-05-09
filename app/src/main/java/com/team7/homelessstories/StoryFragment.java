@@ -77,8 +77,8 @@ public class StoryFragment extends Fragment {
                 // TODO should standardize this
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
-                    .replace(container.getId(), StoriesFragment.newInstance())
-                    .addToBackStack(null).commit();
+                        .replace(container.getId(), StoriesFragment.newInstance())
+                        .addToBackStack(null).commit();
                 return true;
             default:
                 // If we got here, the user's action was not recognized.
@@ -137,7 +137,7 @@ public class StoryFragment extends Fragment {
             MaterialButton button = (MaterialButton) buttonContainer.getChildAt(i);
 
             button.setText(answer.getAnswer());
-            if(i == answers.size() - 1){
+            if (i == answers.size() - 1) {
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) button.getLayoutParams();
                 lp.bottomMargin = 0;
                 button.setLayoutParams(lp);
