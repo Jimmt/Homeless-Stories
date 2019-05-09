@@ -28,7 +28,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 
-public class StoryEndFragment extends Fragment {
+public class StoryEndFragment extends OptionsFragment {
     private static final String ARG_STORY = "story";
 
     private Story story;
@@ -36,8 +36,6 @@ public class StoryEndFragment extends Fragment {
     private int NUM_PAGES = 0;
 
     private ViewGroup container;
-
-    private FragmentInteractionListener listener;
 
     public StoryEndFragment() {
         // Required empty public constructor
@@ -59,7 +57,7 @@ public class StoryEndFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
+        super.onCreateView(inflater, container, savedInstanceState);
 
         if (getArguments() != null) {
             story = (Story) getArguments().get(ARG_STORY);
@@ -87,28 +85,11 @@ public class StoryEndFragment extends Fragment {
         ViewPager pager = view.findViewById(R.id.view_pager);
         pager.setAdapter(new CustomPagerAdapter(getContext()));
 
-        MaterialButton nextStoryButton = view.findViewById(R.id.next_story_button);
-        nextStoryButton.setOnClickListener(new View.OnClickListener() {
+        MaterialButton backToStoriesButton = view.findViewById(R.id.back_to_stories_button);
+        backToStoriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    ArrayList<Story> stories = BuildStories.getStories(v.getContext());
-
-                    Story nextStory = null;
-
-                    // Find the next story (list is ordered by story index) or cycle back to the first one
-                    // if we're at the last story.
-                    if (story.getIndex() < stories.size() - 1) {
-                        nextStory = stories.get(story.getIndex() + 1);
-                    } else {
-                        nextStory = stories.get(0);
-                    }
-
-                    StoryDialogGenerator.showDialog(getActivity(), container, nextStory);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                listener.switchFragments(StoriesFragment.newInstance(), TransitionType.FADE_IN_SLIDE_DOWN);
             }
         });
 
@@ -122,47 +103,6 @@ public class StoryEndFragment extends Fragment {
         });
 
         return view;
-    }
-
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.appbar_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_cancel:
-                // Go back to stories fragment
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
-                        .replace(container.getId(), StoriesFragment.newInstance())
-                        .addToBackStack(null).commit();
-                return true;
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof FragmentInteractionListener) {
-            listener = (FragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement FragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        listener = null;
     }
 
     private class CustomPagerAdapter extends PagerAdapter {

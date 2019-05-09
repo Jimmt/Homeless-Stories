@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 
-public class DonateFragment extends Fragment {
-
-    private FragmentInteractionListener listener;
+public class DonateFragment extends ListenerFragment {
 
     public DonateFragment() {
         // Required empty public constructor
@@ -35,27 +33,11 @@ public class DonateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_donate, container, false);
 
         listener.setToolbarStyle(true);
         return view;
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof FragmentInteractionListener) {
-            listener = (FragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement FragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        listener = null;
     }
 }

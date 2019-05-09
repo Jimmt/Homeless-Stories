@@ -26,7 +26,7 @@ import androidx.fragment.app.FragmentManager;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
 
 
-public class StoryFragment extends Fragment {
+public class StoryFragment extends OptionsFragment {
     private static final String ARG_STORY = "story";
     private static final String ARG_DECISION_INDEX = "decision_index";
 
@@ -37,8 +37,6 @@ public class StoryFragment extends Fragment {
     private ImageView storyImage;
     private TextView headerText, text;
     private LinearLayout buttonContainer;
-
-    private FragmentInteractionListener listener;
 
     public StoryFragment() {
         // Required empty public constructor
@@ -64,33 +62,9 @@ public class StoryFragment extends Fragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.appbar_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_cancel:
-                // Go back to stories fragment
-                // TODO should standardize this
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
-                        .replace(container.getId(), StoriesFragment.newInstance())
-                        .addToBackStack(null).commit();
-                return true;
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        setHasOptionsMenu(true);
+        super.onCreateView(inflater, container, savedInstanceState);
 
         if (getArguments() != null) {
             story = (Story) getArguments().get(ARG_STORY);
@@ -171,23 +145,6 @@ public class StoryFragment extends Fragment {
                 }
             });
         }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof FragmentInteractionListener) {
-            listener = (FragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement FragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        listener = null;
     }
 
 }

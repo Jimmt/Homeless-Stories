@@ -127,7 +127,6 @@ public class StoriesFragment extends Fragment {
                 public void onClick(View v) {
                     toggle(el, divider, arrowImage);
 //                    TransitionManager.beginDelayedTransition(mcv);
-//                    StoryDialogGenerator.showDialog(getActivity(), container, story);
                 }
             });
         }

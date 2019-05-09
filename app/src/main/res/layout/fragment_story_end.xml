@@ -74,10 +74,10 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/next_story_button"
+            android:id="@+id/back_to_stories_button"
             style="@style/CustomButton"
             android:layout_width="match_parent"
-            android:text="NEXT STORY" />
+            android:text="BACK TO STORIES" />
 
         <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/read_more_button"

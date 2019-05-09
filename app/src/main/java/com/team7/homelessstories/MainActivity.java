@@ -125,11 +125,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         if (showDrawer) {
             drawer.openDrawer(GravityCompat.START);
         } else {
-            FragmentManager fm = getSupportFragmentManager();
-            fm.beginTransaction()
-                    .setCustomAnimations(R.anim.fade_in, R.anim.slide_down)
-                    .replace(R.id.frame_layout, StoriesFragment.newInstance())
-                    .addToBackStack(null).commit();
+            switchFragments(StoriesFragment.newInstance(), TransitionType.FADE_IN_SLIDE_DOWN);
             setUpButton(true);
         }
         return super.onSupportNavigateUp();
@@ -148,6 +144,22 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void switchFragments(Fragment frag, TransitionType type) {
+        FragmentManager fm = getSupportFragmentManager();
+        if (type == TransitionType.SLIDE_UP_FADE_OUT) {
+            fm.beginTransaction()
+                    .setCustomAnimations(R.anim.slide_up, R.anim.fade_out, R.anim.fade_in, R.anim.slide_down)
+                    .replace(R.id.frame_layout, frag)
+                    .addToBackStack(null)
+                    .commit();
+        } else if (type == TransitionType.FADE_IN_SLIDE_DOWN) {
+            fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
+                    .replace(R.id.frame_layout, StoriesFragment.newInstance())
+                    .addToBackStack(null).commit();
+        }
     }
 
     @Override
