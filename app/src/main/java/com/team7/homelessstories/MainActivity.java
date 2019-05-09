@@ -1,21 +1,20 @@
 package com.team7.homelessstories;
 
 import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
-import org.json.JSONException;
-
-import java.util.ArrayList;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -25,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private Menu drawerMenu;
+    private Toolbar toolbar;
     private TextView toolbarTitle;
     private boolean showDrawer = true;
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, StoriesFragment.newInstance()).commit();
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -140,8 +140,11 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     @Override
-    public void updateToolbarTitle(String text) {
+    public void updateToolbarTitle(String text, int gravity) {
         toolbarTitle.setText(text);
+        Toolbar.LayoutParams lp = (Toolbar.LayoutParams) toolbarTitle.getLayoutParams();
+        lp.gravity = gravity;
+        toolbarTitle.setLayoutParams(lp);
     }
 
     @Override
@@ -154,6 +157,28 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         } else {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 //            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_24px);
+        }
+    }
+
+    @Override
+    public void setToolbarStyle(boolean mainScreen) {
+        if(mainScreen){
+            setUpButton(true);
+            toolbar.setBackgroundColor(Color.WHITE);
+            toolbar.setElevation(4);
+            Typeface face = ResourcesCompat.getFont(this, R.font.lato_regular);
+            toolbarTitle.setTypeface(face);
+
+            TypedValue tv = new TypedValue();
+            getResources().getValue(R.dimen.logo_letter_spacing, tv, true);
+            toolbarTitle.setLetterSpacing(tv.getFloat());
+        } else {
+            setUpButton(false);
+            toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPage));
+            toolbar.setElevation(0);
+            Typeface face = ResourcesCompat.getFont(this, R.font.noto_serif_jp_bold);
+            toolbarTitle.setTypeface(face);
+            toolbarTitle.setLetterSpacing(0);
         }
     }
 }

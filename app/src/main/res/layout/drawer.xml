@@ -13,23 +13,29 @@
         android:layout_height="match_parent">
 
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPage">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/PathsToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
 
-                <TextView
-                    android:id="@+id/toolbar_title"
-                    style="@style/HeaderText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Stories"
-                    android:padding="0dp"
-                    />
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/HeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/story_horizontal_margin"
+                android:paddingTop="0dp"
+                android:paddingRight="@dimen/story_horizontal_margin"
+                android:paddingBottom="0dp"
+                android:letterSpacing="@dimen/logo_letter_spacing"
+                android:text="Stories" />
 
-            </androidx.appcompat.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
         <FrameLayout
             android:id="@+id/frame_layout"
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.team7.homelessstories;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -60,7 +61,6 @@ public class StoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        listener.setUpButton(false);
     }
 
     @Override
@@ -74,6 +74,7 @@ public class StoryFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.action_cancel:
                 // Go back to stories fragment
+                // TODO should standardize this
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
                     .replace(container.getId(), StoriesFragment.newInstance())
@@ -108,7 +109,8 @@ public class StoryFragment extends Fragment {
 //
         displayDecision(inflater);
 
-        listener.updateToolbarTitle(story.getName() + "'s Story");
+        listener.updateToolbarTitle(story.getName() + "'s Story", Gravity.LEFT);
+        listener.setToolbarStyle(false);
 
         MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);
 

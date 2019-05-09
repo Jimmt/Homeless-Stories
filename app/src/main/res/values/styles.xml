@@ -63,4 +63,13 @@
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
+    <style name="PathsToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="StoryToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPage</item>
+        <item name="android:elevation">0dp</item>
+    </style>
 </resources>

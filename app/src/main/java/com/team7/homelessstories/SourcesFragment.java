@@ -3,6 +3,7 @@ package com.team7.homelessstories;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +38,8 @@ public class SourcesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_donate, container, false);
 
-        listener.updateToolbarTitle("Sources");
-        listener.setUpButton(true);
+        listener.updateToolbarTitle("Sources", Gravity.CENTER);
+        listener.setToolbarStyle(false);
         return view;
     }
 
