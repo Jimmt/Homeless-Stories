@@ -88,6 +88,7 @@ public class StoriesFragment extends Fragment {
             final MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
             final View divider = mcv.findViewById(R.id.divider);
             final ExpandableLayout el = mcv.findViewById(R.id.expandable_layout);
+            final ImageView arrowImage = mcv.findViewById(R.id.arrow_image);
 
             ImageView image = mcv.findViewById(R.id.person_image);
             image.setImageResource(drawableIds[i]);
@@ -95,6 +96,10 @@ public class StoriesFragment extends Fragment {
             ((TextView) el.findViewById(R.id.preview_text)).setText(story.getPreview());
             ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
             ((TextView) mcv.findViewById(R.id.story_type)).setText(story.getType());
+
+            if(el.isExpanded()){
+                arrowImage.setRotation(180);
+            }
 
             ((TextView) mcv.findViewById(R.id.read_button)).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -121,7 +126,7 @@ public class StoriesFragment extends Fragment {
             mcv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    toggle(el, divider);
+                    toggle(el, divider, arrowImage);
 //                    TransitionManager.beginDelayedTransition(mcv);
 //                    StoryDialogGenerator.showDialog(getActivity(), container, story);
                 }
@@ -129,11 +134,13 @@ public class StoriesFragment extends Fragment {
         }
     }
 
-    public void toggle(ExpandableLayout el, View divider){
+    public void toggle(ExpandableLayout el, View divider, ImageView arrowImage) {
         el.toggle();
         if (el.isExpanded()) {
+            arrowImage.animate().rotation(180).start();
             divider.setVisibility(View.VISIBLE);
         } else {
+            arrowImage.animate().rotation(0).start();
             divider.setVisibility(View.GONE);
         }
     }
