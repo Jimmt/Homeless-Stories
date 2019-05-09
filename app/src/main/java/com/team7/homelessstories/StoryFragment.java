@@ -60,8 +60,6 @@ public class StoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setHasOptionsMenu(true);
-//        setRetainInstance(true);
         listener.setUpButton(false);
     }
 
@@ -76,11 +74,10 @@ public class StoryFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.action_cancel:
                 // Go back to stories fragment
-                // TODO change if necessary
                 FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.beginTransaction().replace(container.getId(), StoriesFragment.newInstance())
-                        .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                        .addToBackStack(null).commit();
+                fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
+                    .replace(container.getId(), StoriesFragment.newInstance())
+                    .addToBackStack(null).commit();
                 return true;
             default:
                 // If we got here, the user's action was not recognized.
@@ -92,6 +89,8 @@ public class StoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+
         if (getArguments() != null) {
             story = (Story) getArguments().get(ARG_STORY);
             decisionIndex = getArguments().getInt(ARG_DECISION_INDEX);

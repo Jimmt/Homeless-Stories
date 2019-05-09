@@ -56,6 +56,8 @@ public class StoryEndFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+
         if (getArguments() != null) {
             story = (Story) getArguments().get(ARG_STORY);
         }
@@ -129,7 +131,8 @@ public class StoryEndFragment extends Fragment {
             case R.id.action_cancel:
                 // Go back to stories fragment
                 FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.beginTransaction().replace(container.getId(), StoriesFragment.newInstance())
+                fm.beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.slide_down, R.anim.slide_up, R.anim.fade_out)
+                        .replace(container.getId(), StoriesFragment.newInstance())
                         .addToBackStack(null).commit();
                 return true;
             default:

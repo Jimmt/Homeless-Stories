@@ -149,9 +149,11 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         this.showDrawer = showDrawer;
 
         if (showDrawer) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24px);
         } else {
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_24px);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+//            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_close_24px);
         }
     }
 }
