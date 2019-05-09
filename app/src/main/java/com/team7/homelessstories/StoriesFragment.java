@@ -64,7 +64,6 @@ public class StoriesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
         addStoryCards(view, inflater, container);
-        listener.updateToolbarTitle("PATHS", Gravity.CENTER);
         listener.setToolbarStyle(true);
         return view;
     }

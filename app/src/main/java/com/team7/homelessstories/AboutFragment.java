@@ -38,8 +38,7 @@ public class AboutFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_donate, container, false);
 
-        listener.updateToolbarTitle("About", Gravity.CENTER);
-        listener.setToolbarStyle(false);
+        listener.setToolbarStyle(true);
         return view;
     }
 

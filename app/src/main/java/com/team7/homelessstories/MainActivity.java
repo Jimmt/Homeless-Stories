@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
         // Insert the fragment by replacing any existing fragment
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(R.anim.fade_in, R.anim.disappear, R.anim.fade_in, R.anim.disappear)
                 .replace(R.id.frame_layout, fragment).addToBackStack(null).commit();
 
         // Highlight the selected item has been done by NavigationView
@@ -178,6 +180,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     @Override
     public void setToolbarStyle(boolean mainScreen) {
         if (mainScreen) {
+            updateToolbarTitle("PATHS", Gravity.CENTER);
             setUpButton(true);
             setStatusBarColor(android.R.color.white);
             toolbar.setBackgroundColor(Color.WHITE);

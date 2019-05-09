@@ -5,4 +5,5 @@
     <color name="colorAccent">#f7a9a9</color>
     <color name="lightGray">#999999</color>
     <color name="colorPage">#ede9e5</color>
+    <color name="colorPrimaryTranslucent">#4D36508d</color>
 </resources>
