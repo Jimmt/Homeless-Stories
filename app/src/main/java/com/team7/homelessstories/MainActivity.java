@@ -170,7 +170,9 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     private void setStatusBarColor(int colorId) {
-        getWindow().setStatusBarColor(ContextCompat.getColor(this, colorId));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, colorId));
+        }
     }
 
     @Override
