@@ -8,4 +8,6 @@
     <dimen name="header_text_size">20sp</dimen>
     <dimen name="story_header_text_size">32sp</dimen>
     <item name="logo_letter_spacing" format="float" type="dimen">0.2</item>
+    <dimen name="card_horizontal_margin">16dp</dimen>
+    <dimen name="card_vertical_margin">12dp</dimen>
 </resources>

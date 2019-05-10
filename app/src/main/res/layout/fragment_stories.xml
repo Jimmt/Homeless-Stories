@@ -10,6 +10,7 @@
         android:id="@+id/stories_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/card_vertical_margin">
     </LinearLayout>
 </ScrollView>
