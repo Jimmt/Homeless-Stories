@@ -64,7 +64,7 @@ public class StoriesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
         addStoryCards(view, inflater, container);
-        listener.setToolbarStyle(true);
+        listener.setToolbarStyle(this);
         return view;
     }
 

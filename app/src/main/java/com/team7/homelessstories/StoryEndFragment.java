@@ -70,7 +70,7 @@ public class StoryEndFragment extends OptionsFragment {
         View view = inflater.inflate(R.layout.fragment_story_end, container, false);
 
         listener.updateToolbarTitle(story.getName() + "'s Story", Gravity.LEFT);
-        listener.setToolbarStyle(false);
+        listener.setToolbarStyle(this);
 
         TextView finalTextHeader = view.findViewById(R.id.final_text_header);
         finalTextHeader.setText("Final Decision");

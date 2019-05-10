@@ -87,7 +87,7 @@ public class DonateFragment extends ListenerFragment {
             });
         }
 
-        listener.setToolbarStyle(true);
+        listener.setToolbarStyle(this);
         return view;
     }
 }

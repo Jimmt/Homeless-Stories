@@ -5,6 +5,6 @@ import androidx.fragment.app.Fragment;
 public interface FragmentInteractionListener {
     void updateToolbarTitle(String text, int gravity);
     void setUpButton(boolean showDrawer);
-    void setToolbarStyle(boolean mainScreen);
+    void setToolbarStyle(Fragment fragment);
     void switchFragments(Fragment fragment, TransitionType type);
 }

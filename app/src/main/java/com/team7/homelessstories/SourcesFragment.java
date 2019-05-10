@@ -49,7 +49,7 @@ public class SourcesFragment extends ListenerFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sources, container, false);
 
-        listener.setToolbarStyle(true);
+        listener.setToolbarStyle(this);
 
         LinearLayout storySourcesContainer = view.findViewById(R.id.story_sources_container);
         String[] storySources = getSources(R.raw.story_sources);

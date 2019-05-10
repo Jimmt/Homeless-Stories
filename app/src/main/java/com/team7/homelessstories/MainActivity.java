@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -44,11 +46,12 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
             decor.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
 
+        StoriesFragment frag = StoriesFragment.newInstance();
         if (!Utils.getPrefs(this).getBoolean("onboarding_complete", false)) {
             Intent intent = new Intent(MainActivity.this, OnboardingActivity.class);
             startActivity(intent);
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, StoriesFragment.newInstance()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, frag).commit();
         }
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         setupDrawerContent(drawer);
 
         toolbarTitle = drawer.findViewById(R.id.toolbar_title);
-        setToolbarStyle(true);
+        setToolbarStyle(frag);
     }
 
     private void setupDrawerContent(DrawerLayout drawer) {
@@ -190,8 +193,10 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
     }
 
     @Override
-    public void setToolbarStyle(boolean mainScreen) {
-        if (mainScreen) {
+    public void setToolbarStyle(Fragment currentFrag) {
+        if (currentFrag instanceof StoriesFragment || currentFrag instanceof AboutFragment
+                || currentFrag instanceof DonateFragment || currentFrag instanceof SourcesFragment) {
+            toolbarTitle.setBackground(null);
             updateToolbarTitle("PATHS", Gravity.CENTER);
             setUpButton(true);
             setStatusBarColor(android.R.color.white);
@@ -206,6 +211,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
             toolbarTitle.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
         } else {
+            toolbarTitle.setBackground(getResources().getDrawable(R.drawable.ic_dots));
             setUpButton(false);
 
             int pageColor = ContextCompat.getColor(this, R.color.colorPage);

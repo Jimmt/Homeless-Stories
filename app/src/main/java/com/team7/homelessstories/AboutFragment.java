@@ -38,7 +38,7 @@ public class AboutFragment extends ListenerFragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_about, container, false);
 
-        listener.setToolbarStyle(true);
+        listener.setToolbarStyle(this);
         return view;
     }
 }

@@ -84,7 +84,7 @@ public class StoryFragment extends OptionsFragment {
         displayDecision(inflater);
 
         listener.updateToolbarTitle(story.getName() + "'s Story", Gravity.LEFT);
-        listener.setToolbarStyle(false);
+        listener.setToolbarStyle(this);
 
         MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);
 

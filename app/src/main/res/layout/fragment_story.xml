@@ -18,7 +18,11 @@
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+    </TextView>
+
+
 
     <ScrollView
         android:id="@+id/scrollView2"
