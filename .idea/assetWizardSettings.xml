@@ -19,9 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_foreign" />
+                            <entry key="height" value="616" />
+                            <entry key="outputName" value="ic_background" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\austi\Downloads\foreign.svg" />
+                            <entry key="sourceFile" value="C:\Users\austi\Downloads\assets\background.svg" />
+                            <entry key="width" value="360" />
                           </map>
                         </option>
                       </PersistentState>

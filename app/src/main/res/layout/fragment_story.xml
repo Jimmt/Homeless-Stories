@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="100"
-    android:background="@color/colorPage"
+    android:background="@drawable/background"
     tools:context=".StoryFragment">
 
     <TextView

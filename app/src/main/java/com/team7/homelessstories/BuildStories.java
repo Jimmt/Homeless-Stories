@@ -68,6 +68,7 @@ public class BuildStories {
             Story story = new Story(
                     storyJSON.getInt("index"),
                     storyJSON.getString("name"),
+                    storyJSON.getString("image"),
                     storyJSON.getString("type"),
                     storyJSON.getString("preview"),
                     storyJSON.getString("finalText"), decisions);
@@ -118,12 +119,13 @@ public class BuildStories {
 
 class Story implements Serializable, Comparable {
     private int index;
-    private String name, type, finalText, preview;
+    private String name, image, type, finalText, preview;
     private ArrayList<Decision> decisions;
 
-    public Story(int index, String name, String type, String preview, String finalText, ArrayList<Decision> decisions) {
+    public Story(int index, String name, String image, String type, String preview, String finalText, ArrayList<Decision> decisions) {
         this.index = index;
         this.name = name;
+        this.image = image;
         this.type = type;
         this.preview = preview;
         this.finalText = finalText;
@@ -135,6 +137,8 @@ class Story implements Serializable, Comparable {
     public String getName() {
         return name;
     }
+
+    public String getImage() { return image; }
 
     public String getType() {
         return type;

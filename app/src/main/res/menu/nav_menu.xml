@@ -3,24 +3,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/stories"
-            android:icon="@drawable/ic_baseline_book_24px"
+            android:icon="@drawable/ic_story"
             android:title="Stories"
             android:checked="true"/>
         <!--android:icon="@drawable/ic_action_refresh"-->
 
         <item
             android:id="@+id/about"
-            android:icon="@drawable/ic_baseline_info_24px"
+            android:icon="@drawable/ic_about"
             android:title="About" />
 
         <item
             android:id="@+id/donate"
-            android:icon="@drawable/ic_heart"
+            android:icon="@drawable/ic_donate"
             android:title="Donate" />
 
         <item
             android:id="@+id/sources"
-            android:icon="@drawable/ic_baseline_description_24px"
+            android:icon="@drawable/ic_source_sm"
             android:title="Sources" />
     </group>
 </menu>

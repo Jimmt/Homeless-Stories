@@ -78,8 +78,6 @@ public class StoriesFragment extends Fragment {
 
         LinearLayout storiesContainer = view.findViewById(R.id.stories_container);
 
-        int[] drawableIds = {R.drawable.ic_jazz, R.drawable.ic_twigg};
-
         for (int i = 0; i < stories.size(); i++) {
             final Story story = stories.get(i);
 
@@ -90,13 +88,14 @@ public class StoriesFragment extends Fragment {
             final ImageView arrowImage = mcv.findViewById(R.id.arrow_image);
 
             ImageView image = mcv.findViewById(R.id.person_image);
-            image.setImageResource(drawableIds[i]);
+            image.setImageResource(
+                    getResources().getIdentifier(story.getImage(), "drawable", getContext().getPackageName()));
 
             ((TextView) el.findViewById(R.id.preview_text)).setText(story.getPreview());
             ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
             ((TextView) mcv.findViewById(R.id.story_type)).setText(story.getType());
 
-            if(el.isExpanded()){
+            if (el.isExpanded()) {
                 arrowImage.setRotation(180);
             }
 
