@@ -62,7 +62,8 @@ public class BuildStories {
                 }
 
                 Decision d = new Decision(decision.getString("decisionText"), answers,
-                        decision.has("keyDecisionText") ? decision.getString("keyDecisionText") : "");
+                        decision.has("keyDecisionText") ? decision.getString("keyDecisionText") : "",
+                        decision.getString("icon"));
                 decisions.add(d);
             }
 
@@ -171,12 +172,16 @@ class Decision implements Serializable {
     private String decisionText;
     private ArrayList<Answer> answers;
     private String keyDecisionText;
+    private String icon;
 
-    public Decision(String decisionText, ArrayList<Answer> answers, String keyDecisionText) {
+    public Decision(String decisionText, ArrayList<Answer> answers, String keyDecisionText, String icon) {
         this.decisionText = decisionText;
         this.answers = answers;
         this.keyDecisionText = keyDecisionText;
+        this.icon = icon;
     }
+
+    public String getIcon() { return icon; }
 
     public String getKeyDecisionText() {
         return keyDecisionText;

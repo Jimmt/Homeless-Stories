@@ -35,7 +35,7 @@ public class StoryFragment extends OptionsFragment {
     private int decisionIndex;
 
     private ViewGroup container;
-    private ImageView storyImage;
+    private ImageView decisionIcon;
     private TextView headerText, text;
     private LinearLayout buttonContainer;
 
@@ -75,7 +75,7 @@ public class StoryFragment extends OptionsFragment {
         this.container = container;
         View view = inflater.inflate(R.layout.fragment_story, container, false);
 
-//        storyImage = view.findViewById(R.id.story_image);
+        decisionIcon = view.findViewById(R.id.decision_icon);
         headerText = view.findViewById(R.id.decision_header_text);
         text = view.findViewById(R.id.decision_text);
         buttonContainer = view.findViewById(R.id.button_container);
@@ -100,8 +100,9 @@ public class StoryFragment extends OptionsFragment {
     private void displayDecision(LayoutInflater inflater) {
         Decision decision = story.getDecisions().get(decisionIndex);
 
-//        int imageId = getResources().getIdentifier(decision.getImageName(), "drawable", getContext().getPackageName());
-//        storyImage.setImageResource(imageId);
+        int imageId = getResources().getIdentifier("ic_story_" + decision.getIcon(), "drawable", getContext().getPackageName());
+        decisionIcon.setImageResource(imageId);
+
         String numberWord = ValueConverters.ENGLISH_INTEGER.asWords((decisionIndex + 1));
         numberWord = (String.valueOf(numberWord.charAt(0))).toUpperCase() + numberWord.substring(1);
         headerText.setText("Step " + numberWord);

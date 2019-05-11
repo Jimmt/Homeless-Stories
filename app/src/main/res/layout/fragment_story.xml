@@ -8,17 +8,29 @@
     android:background="@drawable/background"
     tools:context=".StoryFragment">
 
+    <ImageView
+        android:id="@+id/decision_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/story_horizontal_margin"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_story_dog" />
+
     <TextView
         android:id="@+id/decision_header_text"
         style="@style/StoryHeaderText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toBottomOf="@+id/decision_icon">
 
     </TextView>
 

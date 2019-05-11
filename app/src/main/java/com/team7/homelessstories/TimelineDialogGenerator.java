@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,7 +26,7 @@ public class TimelineDialogGenerator {
 
         dialog.show();
 
-        populateTimeline(inflater, dialog.findViewById(R.id.timeline_container), story);
+        populateTimeline(activity, inflater, dialog.findViewById(R.id.timeline_container), story);
 
         Button closeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
         Typeface face = ResourcesCompat.getFont(activity, R.font.lato_regular);
@@ -33,7 +34,7 @@ public class TimelineDialogGenerator {
         closeButton.setTextColor(ContextCompat.getColor(activity, R.color.colorPrimary));
     }
 
-    private static void populateTimeline(LayoutInflater inflater, LinearLayout layout, Story story) {
+    private static void populateTimeline(FragmentActivity activity, LayoutInflater inflater, LinearLayout layout, Story story) {
         for (int i = 0; i < story.getDecisions().size(); i++) {
             Decision decision = story.getDecisions().get(i);
 
@@ -47,7 +48,8 @@ public class TimelineDialogGenerator {
             ConstraintLayout entry = (ConstraintLayout) layout.getChildAt(i * 2);
 
             // Decision
-//            ((ImageView) entry.findViewById(R.id.entry_image)).setImageResource();
+            int imageId = activity.getResources().getIdentifier("ic_story_" + decision.getIcon(), "drawable", activity.getPackageName());
+            ((ImageView) entry.findViewById(R.id.entry_image)).setImageResource(imageId);
             ((TextView) entry.findViewById(R.id.entry_text)).setText(decision.getKeyDecisionText());
 
             // Spacer

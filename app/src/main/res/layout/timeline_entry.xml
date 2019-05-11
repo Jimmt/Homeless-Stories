@@ -16,10 +16,10 @@
 
         <ImageView
             android:id="@+id/entry_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_gravity="center"
-            android:tint="@color/colorAccent"
+            android:tint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/entry_text"
             app:layout_constraintStart_toStartOf="parent"
