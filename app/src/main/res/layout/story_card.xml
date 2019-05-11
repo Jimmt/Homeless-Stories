@@ -114,6 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:tag="el"
                 app:el_duration="500"
                 app:el_expanded="false">
 

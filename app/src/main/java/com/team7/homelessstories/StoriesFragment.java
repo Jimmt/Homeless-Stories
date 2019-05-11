@@ -27,6 +27,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.transition.Fade;
@@ -42,6 +43,7 @@ import androidx.transition.Visibility;
 
 public class StoriesFragment extends Fragment {
     private FragmentInteractionListener listener;
+    private ArrayList<ExpandableLayout> expandableLayouts;
 
     public StoriesFragment() {
         // Required empty public constructor
@@ -63,6 +65,7 @@ public class StoriesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
+        expandableLayouts = new ArrayList<>();
         addStoryCards(view, inflater, container);
         listener.setToolbarStyle(this);
         return view;
@@ -98,6 +101,7 @@ public class StoriesFragment extends Fragment {
             if (el.isExpanded()) {
                 arrowImage.setRotation(180);
             }
+            expandableLayouts.add(el);
 
             ((TextView) mcv.findViewById(R.id.read_button)).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -140,6 +144,35 @@ public class StoriesFragment extends Fragment {
             arrowImage.animate().rotation(0).start();
             divider.setVisibility(View.GONE);
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // To deal with the problem of expandable layouts being expanded when back button is hit.
+        // Not a great solution but works for now.
+        for (ExpandableLayout el : expandableLayouts) {
+            el.collapse(false);
+        }
+    }
+
+    private static ArrayList<View> getViewsByTag(ViewGroup root, String tag) {
+        ArrayList<View> views = new ArrayList<View>();
+        final int childCount = root.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final View child = root.getChildAt(i);
+            if (child instanceof ViewGroup) {
+                views.addAll(getViewsByTag((ViewGroup) child, tag));
+            }
+
+            final Object tagObj = child.getTag();
+            if (tagObj != null && tagObj.equals(tag)) {
+                views.add(child);
+            }
+
+        }
+        return views;
     }
 
     @Override
