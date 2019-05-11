@@ -7,6 +7,7 @@
 	"decisions": [
 	  {
 		"decisionText": "Jazz decided to participate in the study and received an iPod for free. What do you think she did with the iPod?",
+		"keyDecisionText": "Received iPod",
 		"answers": [
 		  {
 			"real": true,
@@ -21,6 +22,7 @@
 	  },
 	  {
 		"decisionText": "Jazz decided to sell the iPod. What do you think Jazz did with the money from selling?",
+		"keyDecisionText": "Sold iPod and bought dog",
 		"answers": [
 		  {
 			"real": false,
@@ -40,6 +42,7 @@
 	  },
 	  {
 		"decisionText": "Jazz bought a dog after pawning the iPod for money. What do you think she did with the dog?",
+		"keyDecisionText": "Gave dog to friend",
 		"answers": [
 		  {
 			"real": false,

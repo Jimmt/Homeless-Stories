@@ -61,7 +61,8 @@ public class BuildStories {
                     answers.add(a);
                 }
 
-                Decision d = new Decision(decision.getString("decisionText"), answers);
+                Decision d = new Decision(decision.getString("decisionText"), answers,
+                        decision.has("keyDecisionText") ? decision.getString("keyDecisionText") : "");
                 decisions.add(d);
             }
 
@@ -132,19 +133,25 @@ class Story implements Serializable, Comparable {
         this.decisions = decisions;
     }
 
-    public int getIndex() { return index; }
+    public int getIndex() {
+        return index;
+    }
 
     public String getName() {
         return name;
     }
 
-    public String getImage() { return image; }
+    public String getImage() {
+        return image;
+    }
 
     public String getType() {
         return type;
     }
 
-    public String getPreview() { return preview; }
+    public String getPreview() {
+        return preview;
+    }
 
     public String getFinalText() {
         return finalText;
@@ -163,10 +170,16 @@ class Story implements Serializable, Comparable {
 class Decision implements Serializable {
     private String decisionText;
     private ArrayList<Answer> answers;
+    private String keyDecisionText;
 
-    public Decision(String decisionText, ArrayList<Answer> answers) {
+    public Decision(String decisionText, ArrayList<Answer> answers, String keyDecisionText) {
         this.decisionText = decisionText;
         this.answers = answers;
+        this.keyDecisionText = keyDecisionText;
+    }
+
+    public String getKeyDecisionText() {
+        return keyDecisionText;
     }
 
     public String getDecisionText() {

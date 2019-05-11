@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -21,6 +22,7 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -78,12 +80,19 @@ public class StoryEndFragment extends OptionsFragment {
         TextView finalTextView = view.findViewById(R.id.final_text);
         finalTextView.setText(story.getFinalText());
 
+        TextView timelineButton = view.findViewById(R.id.timeline_button);
+        timelineButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimelineDialogGenerator.showDialog(getActivity(), inflater, container, story);
+            }
+        });
 
-        TextView keyDecisionsText = view.findViewById(R.id.key_decisions_text);
-        keyDecisionsText.setText("Key Decisions");
+//        TextView keyDecisionsText = view.findViewById(R.id.key_decisions_text);
+//        keyDecisionsText.setText("Key Decisions");
 
-        ViewPager pager = view.findViewById(R.id.view_pager);
-        pager.setAdapter(new CustomPagerAdapter(getContext()));
+//        LinearLayout storyTimeline = view.findViewById(R.id.story_timeline);
+//        populateTimeline(inflater, storyTimeline);
 
         MaterialButton backToStoriesButton = view.findViewById(R.id.back_to_stories_button);
         backToStoriesButton.setOnClickListener(new View.OnClickListener() {
@@ -105,42 +114,22 @@ public class StoryEndFragment extends OptionsFragment {
         return view;
     }
 
-    private class CustomPagerAdapter extends PagerAdapter {
-        private ImageView[] pages;
-        private Context context;
+    private void populateTimeline(LayoutInflater inflater, LinearLayout layout) {
+        for (int i = 0; i < story.getDecisions().size(); i++) {
+            Decision decision = story.getDecisions().get(i);
+            inflater.inflate(R.layout.timeline_entry, layout);
 
-        public CustomPagerAdapter(Context context) {
-            this.context = context;
-            pages = new ImageView[NUM_PAGES];
+            // Multiply by 2 to skip the spacers
+            ConstraintLayout entry = (ConstraintLayout) layout.getChildAt(i * 2);
 
-            for (int i = 0; i < NUM_PAGES; i++) {
-                pages[i] = null;
+            // Decision
+//            ((ImageView) entry.findViewById(R.id.entry_image)).setImageResource();
+            ((TextView) entry.findViewById(R.id.entry_text)).setText(decision.getDecisionText().substring(0, 20));
+
+            // Spacer
+            if (i != story.getDecisions().size() - 1) {
+                inflater.inflate(R.layout.timeline_spacer, layout);
             }
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup collection, int position) {
-            ImageView iv = new ImageView(context);
-//            int imageId = getResources().getIdentifier(story.getDecisions().get(position).getImageName(), "drawable", getContext().getPackageName());
-//            iv.setImageResource(imageId);
-            iv.setImageResource(R.drawable.placeholder);
-            collection.addView(iv);
-            return iv;
-        }
-
-        @Override
-        public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object view) {
-            container.removeView((View) view);
-        }
-
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
-
-        @Override
-        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-            return view == object;
         }
     }
 }
