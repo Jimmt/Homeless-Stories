@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import me.zhanghai.android.materialprogressbar.MaterialProgressBar;
+import pl.allegro.finance.tradukisto.ValueConverters;
 
 
 public class StoryFragment extends OptionsFragment {
@@ -101,7 +102,9 @@ public class StoryFragment extends OptionsFragment {
 
 //        int imageId = getResources().getIdentifier(decision.getImageName(), "drawable", getContext().getPackageName());
 //        storyImage.setImageResource(imageId);
-        headerText.setText("Step " + (decisionIndex + 1));
+        String numberWord = ValueConverters.ENGLISH_INTEGER.asWords((decisionIndex + 1));
+        numberWord = (String.valueOf(numberWord.charAt(0))).toUpperCase() + numberWord.substring(1);
+        headerText.setText("Step " + numberWord);
         text.setText(decision.getDecisionText());
 
         ArrayList<Answer> answers = story.getDecisions().get(decisionIndex).getAnswers();
