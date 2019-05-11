@@ -70,7 +70,6 @@ public class DonateFragment extends ListenerFragment {
             String type = lines[2];
             final String link = lines[3];
 
-            System.out.println(imageId + " " + image + R.drawable.avatar);
             inflater.inflate(R.layout.donate_place_card, cardContainer);
 
             MaterialCardView mcv = (MaterialCardView) cardContainer.getChildAt(i);

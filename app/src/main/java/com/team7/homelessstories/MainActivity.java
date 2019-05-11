@@ -146,7 +146,23 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        drawer.closeDrawers();
+        FragmentManager manager = getSupportFragmentManager();
+
+        if (manager.getBackStackEntryCount() > 0) {
+            super.onBackPressed();
+            Fragment currentFragment = (Fragment) manager.findFragmentById(R.id.frame_layout);
+            if (currentFragment instanceof StoriesFragment) {
+                navigationView.getMenu().getItem(0).setChecked(true);
+            } else if (currentFragment instanceof AboutFragment) {
+                navigationView.getMenu().getItem(1).setChecked(true);
+            } else if (currentFragment instanceof DonateFragment) {
+                navigationView.getMenu().getItem(2).setChecked(true);
+            } else if (currentFragment instanceof SourcesFragment) {
+                navigationView.getMenu().getItem(3).setChecked(true);
+            }
+        }
+//        }
     }
 
     @Override
