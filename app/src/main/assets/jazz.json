@@ -3,7 +3,7 @@
 	"image": "female",
 	"name": "Jazz",
 	"type": "Homeless Youth",
-	"preview": "At the time of this story, Jazz was a 20 year old homeless youth. She identified as white and reported being attracted to girls. Located in the U-District of Seattle, Jazz took a 4-week class called \"New Tech for Youth Sessions\" to develop skills for job opportunities. At the end of the class, she was contacted to participate in a study to explore the relationship homeless individuals have with technology.",
+	"preview": "At the time of this story, Jazz was a 20 year old homeless youth located in the U-District of Seattle. Jazz took a 4-week class called \"New Tech for Youth Sessions\" to develop skills for job opportunities. At the end of the class, she was contacted to participate in a study to explore the relationship homeless individuals have with technology.",
 	"decisions": [
 	  {
 		"decisionText": "Jazz decided to participate in the study and received an iPod for free. What do you think she did with the iPod?",
@@ -17,24 +17,24 @@
 		  {
 			"real": false,
 			"answer": "Listen to music",
-			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
+			"answerText": "Jazz didn't use the iPod to listen to music."
 		  }
 		]
 	  },
 	  {
-		"decisionText": "Jazz decided to sell the iPod. What do you think Jazz did with the money from selling?",
+		"decisionText": "Jazz decided to sell the iPod. What do you think Jazz did with the money?",
 		"icon": "money",
 		"keyDecisionText": "Sold iPod and bought dog",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Save up for apartment",
-			"answerText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Jazz did not use the money to save up for an apartment. Try another choice to see what she did!"
+			"answerText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Jazz didn't use the money to save up for an apartment."
 		  },
 		  {
 			"real": false,
 			"answer": "Buy alcohol",
-			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
+			"answerText": "Most homeless people do not have alcohol or drug-related problems, and put what money they have to better use elsewhere."
 		  },
 		  {
 			"real": true,
@@ -43,14 +43,14 @@
 		]
 	  },
 	  {
-		"decisionText": "Jazz bought a dog after pawning the iPod for money. What do you think she did with the dog?",
+		"decisionText": "Jazz bought a dog after selling her iPod. What do you think she did with the dog?",
 		"icon": "dog",
 		"keyDecisionText": "Gave dog to friend",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Kept as a companion",
-			"answerText": "This was not the decision Jazz chose. Try another choice to see what she did!"
+			"answerText": "She didn't choose to keep the dog."
 		  },
 		  {
 			"real": true,

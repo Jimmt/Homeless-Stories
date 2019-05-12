@@ -31,10 +31,12 @@ public class TimelineDialogGenerator {
         Button closeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
         Typeface face = ResourcesCompat.getFont(activity, R.font.lato_regular);
         closeButton.setTypeface(face);
-        closeButton.setTextColor(ContextCompat.getColor(activity, R.color.colorPrimary));
+
+//        closeButton.setTextColor(ContextCompat.getColor(activity, R.color.colorPrimary));
     }
 
     private static void populateTimeline(FragmentActivity activity, LayoutInflater inflater, LinearLayout layout, Story story) {
+        int childIndex = 0;
         for (int i = 0; i < story.getDecisions().size(); i++) {
             Decision decision = story.getDecisions().get(i);
 
@@ -45,7 +47,8 @@ public class TimelineDialogGenerator {
             inflater.inflate(R.layout.timeline_entry, layout);
 
             // Multiply by 2 to skip the spacers
-            ConstraintLayout entry = (ConstraintLayout) layout.getChildAt(i * 2);
+            ConstraintLayout entry = (ConstraintLayout) layout.getChildAt(childIndex * 2);
+            childIndex++;
 
             // Decision
             int imageId = activity.getResources().getIdentifier("ic_story_" + decision.getIcon(), "drawable", activity.getPackageName());
