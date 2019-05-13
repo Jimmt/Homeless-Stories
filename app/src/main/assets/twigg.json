@@ -39,7 +39,7 @@
 	  },
 
  {
-		"decisionText": "Twigg won a silver medal, missing gold by a few inches to famous racer Connie Carpenter. She continued on her way up over the next several years, setting world records, winning world titles, and racing more than 60 times a year. Unfortunately, she got into an accident and broke her thumb while racing in Texas.",
+		"decisionText": "Twigg won a silver medal, missing gold by a few inches to famous racer Connie Carpenter. She continued on her way up over the next several years, setting world records, winning world titles, and racing more than 60 times a year. Unfortunately, she got into an accident and broke her thumb while racing in Texas. Should Twigg keep cycling?",
 		"icon": "medal",
 		"keyDecisionText": "Won Olympic silver in 1984",
 		"answers": [
@@ -60,12 +60,12 @@
 		"answers": [
 		  {
 			"real": true,
-			"answer": "Work in San Diego"
+			"answer": "Move to San Diego"
 		  },
 		  {
 			"real":false,
 			"answer": "Look for a job in Seattle",	
-			"answerText": "84,426 people are unemployed in Seattle as of February 2019."
+			"answerText": "Seattle has a competetive job market. Some may find to difficult to get a job in Seattle. 84,426 people are unemployed in Seattle as of February 2019."
 		  }
 		]
 	},
@@ -117,7 +117,7 @@
 		]
 	},
   {
-		"decisionText": "Twigg found an IT desk job, but the solitary nature of programming did not suit her. At one point, she didn’t show up to work for 4 days straight. She believed that her boss was about to fire her.",
+		"decisionText": "Twigg found an IT desk job, but the solitary nature of programming did not suit her. At one point, she didn’t show up to work for 4 days straight. She believed that her boss was about to fire her. What was Twigg's approach to this?",
 		"icon": "job",
 		"keyDecisionText": "Found IT job, but quit eventually",
 		"answers": [
@@ -133,7 +133,7 @@
 		]
 	},
   {
-		"decisionText": "Twigg had difficulty finding a new job. Anxiety inhibited her job search, and she was now in her 50’s where her technical skills were generally less relevant. By contrast, the average software engineer in Seattle is 35. She couldn’t find a job, had no savings, and got kicked out of her apartment. She was now homeless in Seattle, and had to focus on survival.",
+		"decisionText": "Twigg had difficulty finding a new job. Anxiety inhibited her job search, and she was now in her 50’s where her technical skills were generally less relevant. By contrast, the average software engineer in Seattle is 35. She couldn’t find a job, had no savings, and was forced to move out of her apartment. She was now homeless in Seattle, and had to focus on survival. Altough she was still passionate about biking, it did not seem practical anymore.",
 		"icon": "bike",
 		"keyDecisionText": "Became homeless and gave her bike away",
 		"answers": [
