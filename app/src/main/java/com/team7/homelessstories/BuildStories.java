@@ -88,6 +88,7 @@ public class BuildStories {
         try {
             list = context.getAssets().list("");
             for (String name : list) {
+                System.out.println(name);
                 if (name.endsWith(".json")) {
                     j.add(loadJsonStory(name, context));
                 }
