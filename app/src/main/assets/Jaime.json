@@ -1,0 +1,84 @@
+{
+	"index": 2,
+	"image": "female",
+	"name": "Jaime",
+	"type": "Volunteer at a women's shelter",
+	"preview": "Jaime is a university student who is passionate about improving the lives of people in her community and help those less privileged than her.",
+	"decisions": [  
+	  {
+		"decisionText": "Jaime has researched nearby homeless shelters and has two opportunities to volunteer in the neighborhood. Both have different time commitments. She now has to choose between the following two options:",
+		"icon": "ipod",
+		"keyDecisionText": "Researched local shelters; chose a 6 month volunteer opportunity",
+		"answers": [
+		  {
+			"real": false,
+            "answer": "No minimum requirements",
+            "answerText": "Sometimes, volunteering short term leads to lack of trust and skepticism between homeless individuals and volunteers due to unfamiliarity and inconsistency. Long term volunteers build stronger relationships with the homeless and are better equipped to tackle any situations that arise."
+		  },
+		  {
+			"real": true,
+			"answer": "6 month commitment"
+		  }
+		]
+	  },
+	  {
+		"decisionText": "What are some traits that might be important to become a successful volunteer at a homeless shelter?",
+		"icon": "ipod",
+		"keyDecisionText": "Skills to be a good volunteer",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Sensitive, worrisome, anxious",
+			"answerText": "Volunteering can be difficult; dealing with irreparably damaged people, seeing injustices that are impossible to fix, or hearing about other’s embedded family issues are all situations that one may face. Other times, volunteers can be loaded with more responsibility than expected which can lead to stress, exhaustion, and burnout."
+		  },
+		  {
+			"real": true,
+			"answer": "Resilient, patient, empathetic"
+		  }
+		]
+	  },
+	  {
+		"decisionText": "Jaime started working at a local women’s shelter located in the basement of a church. On her first shift, she noticed that all the beds were filling up fast. There were still people waiting outside trying to get shelter for the night. Do you think Jaime should let everyone in? ",
+		"icon": "ipod",
+		"keyDecisionText": "Limited capacity means some may not get shelter for the night",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Let people in even after reaching capacity",
+			"answerText": "Shelters have strict rules and limited capacities. Giving special treatment leads to violation of shelter policies because others who were waiting in line and not selected may feel the situation is unfair."
+		  },
+		  {
+			"real": true,
+			"answer": "Call other shelters nearby for availability"
+          },
+          {
+            "real": false,
+			"answer": "Turn them away",
+			"answerText": "People might be in need of emergency shelter and denying a safe space may lead to irreparable damage and increased suffering."
+          }
+		]
+      },
+      {
+        "decisionText": "The next week, a transgender woman who recently became homeless was next in line to get into the shelter with space still available. Since she is working at a woman's shelter, many women at the shelter are survivors of violence and abuse. Should Jaime let them in?",
+		"icon": "ipod",
+		"keyDecisionText": "Gave dog to friend",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Ask them to prove their gender with medical or legal documents",
+			"answerText": "Forcing anybody to prove their gender through medical records is immoral, unethical and illegal."
+		  },
+		  {
+			"real": true,
+			"answer": "Let them in"
+          },
+          {
+            "real": false,
+			"answer": "Turn them away",
+			"answerText": "Denying shelter to somebody because of their sexual orientation is wrong. Due to religious affiliations, some organizations may be unaccepting of transgender people. As a result, they are often not allowed in the shelter even if they are in desperate need of help."
+          }
+		]
+      }
+	],
+	"finalText": "Jaime learned a lot through her time volunteering at the shelter. She made a direct impact to improve the lives of people in her community. She feels more fulfilled. She has become more empathetic towards people’s problems and experiences."
+}
