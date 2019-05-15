@@ -1,49 +1,29 @@
 package com.team7.homelessstories;
 
 
-import android.animation.Animator;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ScrollView;
 
 import com.google.android.material.card.MaterialCardView;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.transition.Fade;
-import androidx.transition.Scene;
-import androidx.transition.Slide;
-import androidx.transition.Transition;
-import androidx.transition.TransitionManager;
-import androidx.transition.TransitionPropagation;
-import androidx.transition.TransitionSet;
-import androidx.transition.TransitionValues;
-import androidx.transition.Visibility;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class StoriesFragment extends Fragment {
     private FragmentInteractionListener listener;
     private ArrayList<ExpandableLayout> expandableLayouts;
+    private ArrayList<MaterialCardView> mcvs;
+    private ScrollView scrollView;
 
     public StoriesFragment() {
         // Required empty public constructor
@@ -65,85 +45,15 @@ public class StoriesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stories, container, false);
 
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new SimpleAdapter(recyclerView, getActivity()));
+
         expandableLayouts = new ArrayList<>();
-        addStoryCards(view, inflater, container);
+        mcvs = new ArrayList<>();
         listener.setToolbarStyle(this);
+
         return view;
-    }
-
-    private void addStoryCards(View view, final LayoutInflater inflater, final ViewGroup container) {
-        ArrayList<Story> stories = new ArrayList<>();
-        try {
-            stories = BuildStories.getStories(view.getContext());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        LinearLayout storiesContainer = view.findViewById(R.id.stories_container);
-
-        for (int i = 0; i < stories.size(); i++) {
-            final Story story = stories.get(i);
-
-            View v = inflater.inflate(R.layout.story_card, storiesContainer);
-            final MaterialCardView mcv = (MaterialCardView) storiesContainer.getChildAt(i);
-            final View divider = mcv.findViewById(R.id.divider);
-            final ExpandableLayout el = mcv.findViewById(R.id.expandable_layout);
-            final ImageView arrowImage = mcv.findViewById(R.id.arrow_image);
-
-            ImageView image = mcv.findViewById(R.id.person_image);
-            image.setImageResource(
-                    getResources().getIdentifier(story.getImage(), "drawable", getContext().getPackageName()));
-
-            ((TextView) el.findViewById(R.id.preview_text)).setText(story.getPreview());
-            ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
-            ((TextView) mcv.findViewById(R.id.story_type)).setText(story.getType());
-
-            if (el.isExpanded()) {
-                arrowImage.setRotation(180);
-            }
-            expandableLayouts.add(el);
-
-            ((TextView) mcv.findViewById(R.id.read_button)).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    StoryFragment frag = StoryFragment.newInstance(story);
-
-                    fragmentManager.beginTransaction()
-                            .setCustomAnimations(R.anim.slide_up, R.anim.fade_out, R.anim.fade_in, R.anim.slide_down)
-                            .replace(container.getId(), frag)
-                            .addToBackStack(null)
-                            .commit();
-                }
-            });
-
-//            ((TextView) mcv.findViewById(R.id.cancel_button)).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    el.collapse();
-//                    divider.setVisibility(View.GONE);
-//                }
-//            });
-
-            mcv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    toggle(el, divider, arrowImage);
-//                    TransitionManager.beginDelayedTransition(mcv);
-                }
-            });
-        }
-    }
-
-    public void toggle(ExpandableLayout el, View divider, ImageView arrowImage) {
-        el.toggle();
-        if (el.isExpanded()) {
-            arrowImage.animate().rotation(180).start();
-            divider.setVisibility(View.VISIBLE);
-        } else {
-            arrowImage.animate().rotation(0).start();
-            divider.setVisibility(View.GONE);
-        }
     }
 
     @Override
@@ -152,9 +62,6 @@ public class StoriesFragment extends Fragment {
 
         // To deal with the problem of expandable layouts being expanded when back button is hit.
         // Not a great solution but works for now.
-        for (ExpandableLayout el : expandableLayouts) {
-            el.collapse(false);
-        }
     }
 
     private static ArrayList<View> getViewsByTag(ViewGroup root, String tag) {
