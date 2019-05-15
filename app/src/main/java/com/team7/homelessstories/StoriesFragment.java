@@ -21,9 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class StoriesFragment extends Fragment {
     private FragmentInteractionListener listener;
-    private ArrayList<ExpandableLayout> expandableLayouts;
-    private ArrayList<MaterialCardView> mcvs;
-    private ScrollView scrollView;
 
     public StoriesFragment() {
         // Required empty public constructor
@@ -48,9 +45,7 @@ public class StoriesFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new SimpleAdapter(recyclerView, getActivity()));
-
-        expandableLayouts = new ArrayList<>();
-        mcvs = new ArrayList<>();
+        
         listener.setToolbarStyle(this);
 
         return view;
@@ -59,27 +54,6 @@ public class StoriesFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
-        // To deal with the problem of expandable layouts being expanded when back button is hit.
-        // Not a great solution but works for now.
-    }
-
-    private static ArrayList<View> getViewsByTag(ViewGroup root, String tag) {
-        ArrayList<View> views = new ArrayList<View>();
-        final int childCount = root.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            final View child = root.getChildAt(i);
-            if (child instanceof ViewGroup) {
-                views.addAll(getViewsByTag((ViewGroup) child, tag));
-            }
-
-            final Object tagObj = child.getTag();
-            if (tagObj != null && tagObj.equals(tag)) {
-                views.add(child);
-            }
-
-        }
-        return views;
     }
 
     @Override

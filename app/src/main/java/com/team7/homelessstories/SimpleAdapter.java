@@ -25,7 +25,6 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
     private ArrayList<Story> stories;
     private RecyclerView recyclerView;
     private int selectedItem = UNSELECTED;
-    private int index = 0;
 
     public SimpleAdapter(RecyclerView recyclerView, FragmentActivity activity) {
         this.recyclerView = recyclerView;
@@ -42,16 +41,22 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Story story = stories.get(index);
         final MaterialCardView mcv = (MaterialCardView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.story_card, parent, false);
+        return new ViewHolder(mcv);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        MaterialCardView mcv = (MaterialCardView) holder.itemView;
+        Story story = stories.get(position % stories.size());
         final View divider = mcv.findViewById(R.id.divider);
         final ExpandableLayout el = mcv.findViewById(R.id.expandable_layout);
         final ImageView arrowImage = mcv.findViewById(R.id.arrow_image);
 
         ImageView image = mcv.findViewById(R.id.person_image);
         image.setImageResource(
-                parent.getResources().getIdentifier(story.getImage(), "drawable", parent.getContext().getPackageName()));
+                mcv.getResources().getIdentifier(story.getImage(), "drawable", mcv.getContext().getPackageName()));
 
         ((TextView) el.findViewById(R.id.preview_text)).setText(story.getPreview());
         ((TextView) mcv.findViewById(R.id.story_name)).setText(story.getName());
@@ -84,14 +89,6 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
                 }
             }
         });
-
-        index++;
-        return new ViewHolder(mcv);
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-
     }
 
     @Override
