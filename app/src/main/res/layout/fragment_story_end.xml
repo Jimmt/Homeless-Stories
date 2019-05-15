@@ -12,7 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -34,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:text="@string/hello_blank_fragment"
-                tools:text="final text" />
+                tools:text="John was able to get on his feet again with assistance from HUD-VASH. He was able to afford his full rent and started saving up money so that he could one day buy his own land. According to the All Home Count Us in 2018 report, King County has had a 31% decline in veteran homelessness since 2017. Organizations like HUD-VASH provide housing and medical assistance to homeless veterans, making a significant impact on people like John. Expansions of HUD-VASH programs will help homeless veterans with housing and basic household items which are necessary for achieving self-sufficiency." />
         </ScrollView>
 
     </LinearLayout>
@@ -43,13 +45,10 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:layout_marginLeft="@dimen/story_horizontal_margin"
-        android:layout_marginRight="@dimen/story_horizontal_margin"
         android:orientation="vertical"
+        android:paddingLeft="@dimen/story_horizontal_margin"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView

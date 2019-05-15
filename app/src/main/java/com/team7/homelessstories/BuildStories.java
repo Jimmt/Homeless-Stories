@@ -73,7 +73,8 @@ public class BuildStories {
                     storyJSON.getString("image"),
                     storyJSON.getString("type"),
                     storyJSON.getString("preview"),
-                    storyJSON.getString("finalText"), decisions);
+                    storyJSON.getString("finalText"),
+                    storyJSON.getString("source"), decisions);
 
             return story;
         } catch (JSONException je) {
@@ -122,16 +123,17 @@ public class BuildStories {
 
 class Story implements Serializable, Comparable {
     private int index;
-    private String name, image, type, finalText, preview;
+    private String name, image, type, finalText, preview, source;
     private ArrayList<Decision> decisions;
 
-    public Story(int index, String name, String image, String type, String preview, String finalText, ArrayList<Decision> decisions) {
+    public Story(int index, String name, String image, String type, String preview, String finalText, String source, ArrayList<Decision> decisions) {
         this.index = index;
         this.name = name;
         this.image = image;
         this.type = type;
         this.preview = preview;
         this.finalText = finalText;
+        this.source = source;
         this.decisions = decisions;
     }
 
@@ -158,6 +160,8 @@ class Story implements Serializable, Comparable {
     public String getFinalText() {
         return finalText;
     }
+
+    public String getSource() { return source; }
 
     public ArrayList<Decision> getDecisions() {
         return decisions;

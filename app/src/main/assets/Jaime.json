@@ -3,6 +3,7 @@
 	"image": "female",
 	"name": "Jaime",
 	"type": "Women's Shelter Volunteer",
+	"source": "https://google.com",
 	"preview": "Jaime is a university student who is passionate about improving the lives of people in her community and help those less privileged than her.",
 	"decisions": [  
 	  {
@@ -13,7 +14,7 @@
 		  {
 			"real": false,
             "answer": "No minimum requirements",
-            "answerText": "Sometimes, volunteering short term leads to lack of trust and skepticism between homeless individuals and volunteers due to unfamiliarity and inconsistency. Long term volunteers build stronger relationships with the homeless and are better equipped to tackle any situations that arise."
+            "answerText": "Jaime didn't choose this option. Sometimes, volunteering short term leads to lack of trust and skepticism between homeless individuals and volunteers due to unfamiliarity and inconsistency. Long term volunteers build stronger relationships with the homeless and are better equipped to tackle any situations that arise."
 		  },
 		  {
 			"real": true,
@@ -53,31 +54,31 @@
           {
             "real": false,
 			"answer": "Turn them away",
-			"answerText": "People might be in need of emergency shelter and denying a safe space may lead to irreparable damage and increased suffering."
+			"answerText": "People might be in need of emergency shelter, and denying a safe space may lead to irreparable damage and increased suffering."
           }
 		]
       },
       {
-        "decisionText": "The next week, a transgender woman who recently became homeless was next in line to get into the shelter with space still available. Since she is working at a woman's shelter, many women at the shelter are survivors of violence and abuse. Should Jaime let them in?",
+        "decisionText": "The next week, a transgender woman who recently became homeless was next in line to get into the shelter with space still available. Since Jaime is working at a woman's shelter, many women at the shelter are survivors of violence and abuse. Should Jaime let them in?",
 		"icon": "ipod",
 		"keyDecisionText": "Let transgender woman into shelter",
 		"answers": [
 		  {
 			"real": false,
-			"answer": "Ask them to prove their gender with medical or legal documents",
+			"answer": "Ask her to prove their gender with medical or legal documents",
 			"answerText": "Forcing anybody to prove their gender through medical records is immoral, unethical and illegal."
 		  },
 		  {
 			"real": true,
-			"answer": "Let them in"
+			"answer": "Let her in"
           },
           {
             "real": false,
-			"answer": "Turn them away",
-			"answerText": "Denying shelter to somebody because of their sexual orientation is wrong. Due to religious affiliations, some organizations may be unaccepting of transgender people. As a result, they are often not allowed in the shelter even if they are in desperate need of help."
+			"answer": "Turn her away",
+			"answerText": "Jaime didn't turn her away. Due to religious affiliations, some organizations may be unaccepting of transgender people. As a result, they are often not allowed in the shelter even if they are in desperate need of help."
           }
 		]
       }
 	],
-	"finalText": "Jaime learned a lot through her time volunteering at the shelter. She made a direct impact to improve the lives of people in her community. She feels more fulfilled. She has become more empathetic towards people’s problems and experiences."
+	"finalText": "Jaime learned valuable lessons through her time volunteering at the shelter, and made a direct impact in the lives of people in her community. She felt fulfilled by the time she spent volunteering, and became more empathetic towards people’s personal problems and experiences."
 }

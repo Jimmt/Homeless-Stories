@@ -106,30 +106,11 @@ public class StoryEndFragment extends OptionsFragment {
         readMoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(story.getSource()));
                 startActivity(browserIntent);
             }
         });
 
         return view;
-    }
-
-    private void populateTimeline(LayoutInflater inflater, LinearLayout layout) {
-        for (int i = 0; i < story.getDecisions().size(); i++) {
-            Decision decision = story.getDecisions().get(i);
-            inflater.inflate(R.layout.timeline_entry, layout);
-
-            // Multiply by 2 to skip the spacers
-            ConstraintLayout entry = (ConstraintLayout) layout.getChildAt(i * 2);
-
-            // Decision
-//            ((ImageView) entry.findViewById(R.id.entry_image)).setImageResource();
-            ((TextView) entry.findViewById(R.id.entry_text)).setText(decision.getDecisionText().substring(0, 20));
-
-            // Spacer
-            if (i != story.getDecisions().size() - 1) {
-                inflater.inflate(R.layout.timeline_spacer, layout);
-            }
-        }
     }
 }
