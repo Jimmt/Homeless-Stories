@@ -8,15 +8,15 @@
 	  {
 		"decisionText": "John enrolled in an engineering program at a nearby community college in Seattle. Does he complete it?",
 		"icon": "ipod",
-		"keyDecisionText": "Drops out",
+		"keyDecisionText": "Dropped out",
 		"answers": [
 		  {
 			"real": true,
-			"answer": "John drops out"
+			"answer": "John dropped out"
 		  },
 		  {
 			"real": false,
-			"answer": "John stays in school",
+			"answer": "John stayed in school",
 			"answerText": "Although it is unclear what specific graduation rates are for veterans specifically, veterans often face hardships after discharge as they are generally older than traditional student population, have families, and part-time jobs. Some veterans face mental and physical disability while attending school with pain too unbearable to go to class."
 		  }
 		]
@@ -27,13 +27,12 @@
 		"keyDecisionText": "Unable to find job",
 		"answers": [
 		  {
-			"real": false,
-			"answer": "Is unable to find a job",
-			"answerText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Jazz didn't use the money to save up for an apartment."
+			"real": true,
+			"answer": "Was unable to find a job"
 		  },
 		  {
 			"real": false,
-			"answer": "Finds a relevant job",
+			"answer": "Found a relevant job",
 			"answerText": "Veterans have a difficult time finding a job. According to the Bureau Labor of Statistics, there are 326,000 unemployed veterans, 54% of which are aged 25-54. Additionally, service-connected disability had an unemployment rate of 5.2% which is significantly higher than a rate of 3.5% for veterans with no disability."
 		  }
 		]
@@ -61,7 +60,7 @@
 		"answers": [
 		  {
 			"real": false,
-			"answer": "Continue being unhappy at his job",
+			"answer": "Continued being unhappy at his job",
 			"answerText": "The HUD-VASH Program is a collaboration between the Department of Housing and Urban Development Housing Choice Voucher which provides rental assistance through housing vouchers and the Department of Veteran Affairs which provides clinical services in nearby communities.This program targets chronically homeless veterans and assists them until they can achieve financial independence."
 		  },
 		  {
@@ -73,16 +72,16 @@
 	  {
 		"decisionText": "John went to the HUD-VASH for help but this was tough for him because he wanted to achieve individual success. He also felt that the housing and medical assistance provided from the vouchers would help other veterans who needed it more. Despite all of this, did he continue receiving help from the HUD-VASH?",
 		"icon": "dog",
-		"keyDecisionText": "Keep receiving help",
+		"keyDecisionText": "Kept receiving help",
 		"answers": [
 		  {
 			"real": false,
-			"answer": "Don’t receive help and look for a job",
+			"answer": "Did’t receive help and looked for a job",
 			"answerText": "The VA Puget Sound works with 12 other public housing authorities that serve patients in which 1,731 of the 1,888 housing vouchers are used with a 91% utilization rate."
 		  },
 		  {
 			"real": true,
-			"answer": "Keep receiving help from HUD-VASH for housing"
+			"answer": "Kept receiving help from HUD-VASH for housing"
 		  }
 		]
 	  }
