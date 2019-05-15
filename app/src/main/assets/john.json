@@ -1,0 +1,91 @@
+{
+	"index": 4,
+	"image": "male",
+	"name": "John",
+	"type": "Homeless Veteran",
+	"preview": "John is a gentle, kind and introverted person from Seattle. He joined the Navy directly out of high school at the age of 18. He served 5 years and was honorably discharged at age 23. He moved back to Seattle with some physical and mental wear and tear.",
+	"decisions": [
+	  {
+		"decisionText": "John enrolled in an engineering program at a nearby community college in Seattle. Does he complete it?",
+		"icon": "ipod",
+		"keyDecisionText": "Drops out",
+		"answers": [
+		  {
+			"real": true,
+			"answer": "John drops out"
+		  },
+		  {
+			"real": false,
+			"answer": "John stays in school",
+			"answerText": "Although it is unclear what specific graduation rates are for veterans specifically, veterans often face hardships after discharge as they are generally older than traditional student population, have families, and part-time jobs. Some veterans face mental and physical disability while attending school with pain too unbearable to go to class."
+		  }
+		]
+	  },
+	  {
+		"decisionText": "After dropping out of the engineering program at the community college, he tries to look for a job that can apply the skills he learned from the Navy. Meanwhile, he lives on the couch of his friend. Is he able to find a job?",
+		"icon": "money",
+		"keyDecisionText": "Unable to find job",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Is unable to find a job",
+			"answerText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Jazz didn't use the money to save up for an apartment."
+		  },
+		  {
+			"real": false,
+			"answer": "Finds a relevant job",
+			"answerText": "Veterans have a difficult time finding a job. According to the Bureau Labor of Statistics, there are 326,000 unemployed veterans, 54% of which are aged 25-54. Additionally, service-connected disability had an unemployment rate of 5.2% which is significantly higher than a rate of 3.5% for veterans with no disability."
+		  }
+		]
+	  },
+	  {
+		"decisionText": "John had extreme difficulty looking for a job, but he eventually found a job as a construction worker which is not relevant to his skills learned in the Navy. Do you think he was able to afford a place to live?",
+		"icon": "dog",
+		"keyDecisionText": "Could not afford housing",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Found an affordable apartment",
+			"answerText": "The average salary for a construction worker in Seattle is 31,352 which is not enough to afford an apartment, car, and other living expenses."
+		  },
+		  {
+			"real": true,
+			"answer": "Could not afford housing"
+		  }
+		]
+	  }, 
+	  {
+		"decisionText": "John now had no choice but to live in a tent due to his inability to pay his full rent. He was dealing with issues, transient mood swings, and chronic pain while working his job. John found out from a friend that the HUD-VASH (Department Housing and Urban Development-Veterans Administration Supportive Housing) helps veterans with housing after discharge from the military. What do you think he did?",
+		"icon": "dog",
+		"keyDecisionText": "Went to HUD-VASH",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Continue being unhappy at his job",
+			"answerText": "The HUD-VASH Program is a collaboration between the Department of Housing and Urban Development Housing Choice Voucher which provides rental assistance through housing vouchers and the Department of Veteran Affairs which provides clinical services in nearby communities.This program targets chronically homeless veterans and assists them until they can achieve financial independence."
+		  },
+		  {
+			"real": true,
+			"answer": "Went to the HUD-VASH for help"
+		  }
+		]
+	  }, 
+	  {
+		"decisionText": "John went to the HUD-VASH for help but this was tough for him because he wanted to achieve individual success. He also felt that the housing and medical assistance provided from the vouchers would help other veterans who needed it more. Despite all of this, did he continue receiving help from the HUD-VASH?",
+		"icon": "dog",
+		"keyDecisionText": "Keep receiving help",
+		"answers": [
+		  {
+			"real": false,
+			"answer": "Don’t receive help and look for a job",
+			"answerText": "The VA Puget Sound works with 12 other public housing authorities that serve patients in which 1,731 of the 1,888 housing vouchers are used with a 91% utilization rate."
+		  },
+		  {
+			"real": true,
+			"answer": "Keep receiving help from HUD-VASH for housing"
+		  }
+		]
+	  }
+	],
+	"finalText": "John was able to get on his feet again with assistance from the HUD-VASH. He was able to pay his full rent with his income and started saving up on funds so that he can one day buy his own land. According to the All Home Count Us in 2018 report, King County had a 31% decline in veteran homelessness since 2017 from 1,339 to 921. Organizations like HUD-VASH provide housing and medical assistance to homeless veterans that significantly impact people like John. Expansions of HUD-VASH programs will help homeless veterans with housing and basic household items which are necessary before one can achieve self-sufficiency."
+}
