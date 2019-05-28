@@ -8,7 +8,7 @@
 	"decisions": [
 	  {
 		"decisionText": "John enrolled in an engineering program at a nearby community college in Seattle. Did he complete it?",
-		"correctText": "placeholder",
+		"correctText": "<i>placeholder</i><br>placeholder",
 		"icon": "school",
 		"keyDecisionText": "Dropped out",
 		"answers": [

@@ -1,6 +1,7 @@
 package com.team7.homelessstories;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +52,7 @@ public class CorrectFragment extends OptionsFragment {
 
 
         TextView bodyText = view.findViewById(R.id.correct_body_text);
-        bodyText.setText(story.getDecisions().get(decisionIndex).getCorrectText());
+        bodyText.setText(Html.fromHtml(story.getDecisions().get(decisionIndex).getCorrectText()));
 
         MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);
 

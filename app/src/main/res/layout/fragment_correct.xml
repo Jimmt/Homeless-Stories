@@ -35,9 +35,7 @@
         android:id="@+id/scrollView4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/story_horizontal_margin"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="@dimen/story_horizontal_margin"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,8 +44,10 @@
 
         <TextView
             android:id="@+id/correct_body_text"
+            style="@style/StoryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="top"
             android:text="TextView"
             tools:layout_editor_absoluteY="103dp" />
     </ScrollView>
