@@ -132,18 +132,10 @@ public class StoryFragment extends OptionsFragment {
                         return;
                     }
 
-                    Fragment frag = null;
-                    if (decisionIndex < story.getDecisions().size() - 1) {
-                        decisionIndex++;
-                        frag = StoryFragment.newInstance(story, decisionIndex);
-                    } else {
-                        frag = StoryEndFragment.newInstance(story);
-                    }
-
                     FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                     fragmentManager.beginTransaction()
                             .setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                            .replace(container.getId(), frag)
+                            .replace(container.getId(), CorrectFragment.newInstance(story, decisionIndex))
                             .addToBackStack(null)
                             .commit();
                 }

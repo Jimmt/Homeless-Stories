@@ -67,7 +67,7 @@
         app:layout_constraintBottom_toTopOf="@+id/progress_indicator_container">
 
         <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/button_2"
+            android:id="@+id/next_button"
             style="@style/CustomButton"
             android:layout_width="match_parent"
             android:text="NEXT STORY" />

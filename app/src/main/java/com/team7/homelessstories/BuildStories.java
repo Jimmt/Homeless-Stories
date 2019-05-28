@@ -199,7 +199,7 @@ class Decision implements Serializable {
         return decisionText;
     }
 
-    private String getCorrectText() { return correctText; }
+    public String getCorrectText() { return correctText; }
 
     public ArrayList<Answer> getAnswers() {
         return answers;
