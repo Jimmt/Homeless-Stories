@@ -85,4 +85,8 @@
         <item name="android:background">@color/colorPage</item>
         <item name="android:elevation">0dp</item>
     </style>
+
+    <style name="MenuItem" parent="AppTheme">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

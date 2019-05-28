@@ -53,6 +53,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextAppearance="@style/MenuItem"
         app:headerLayout="@layout/nav_header"
         app:itemBackground="@drawable/nav_menu_item_bg"
         app:itemIconTint="@color/drawer_item_color"
