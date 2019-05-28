@@ -8,6 +8,7 @@
 	"decisions": [
 	  {
 		"decisionText": "At 15 years old, Twigg was given an option to leave her family and live by herself.",
+		"correctText": "placeholder",
 		"icon": "family",
 		"keyDecisionText": "Left family",
 		"answers": [
@@ -24,6 +25,7 @@
 	  },
    {
 		"decisionText": "Twigg decided to leave home while she was studying at the University of Washington. Here she became a successful biker and participated in national competitions. The next years — as Twigg became a cycling star — were transient. She went from friends’ houses to hotels on the road while racing. Her hard work paid off, and she was selected to participate in the 1984 Olympics.",
+		"correctText": "placeholder",
 		"icon": "bike",
 		"keyDecisionText": "Became a successful biker while studying at UW",
 		"answers": [
@@ -41,6 +43,7 @@
 
  {
 		"decisionText": "Twigg won a silver medal, missing gold by a few inches to famous racer Connie Carpenter. She continued on her way up over the next several years, setting world records, winning world titles, and racing more than 60 times a year. Unfortunately, she got into an accident and broke her thumb while racing in Texas. Should Twigg keep cycling?",
+		"correctText": "placeholder",
 		"icon": "medal",
 		"keyDecisionText": "Won Olympic silver in 1984",
 		"answers": [
@@ -57,6 +60,7 @@
 	  },
  {
 		"decisionText": "During her break, she worked towards an Associate’s degree in Computer Science. She was offered a job in San Diego, away from where her family and friends were.",
+		"correctText": "placeholder",
 		"icon": "school",
 		"answers": [
 		  {
@@ -72,6 +76,7 @@
 	},
 	 {
 		"decisionText": "Twigg moved to San Diego to work as a computer programmer for a seaweed-products company. However, she was also still capable of competing in cycling.",
+		"correctText": "placeholder",
 		"icon": "comp",
 		"answers": [
 		  {
@@ -87,6 +92,7 @@
 	},
   {
 		"decisionText": "Twigg trained hard, cycling every day for 9 months, and successfully worked her way into the 1992 Olympics. She won a bronze medal in the 3,000-meter pursuit. However, her age was catching up with her.",
+		"correctText": "placeholder",
 		"icon": "medal",
 		"keyDecisionText": "Won Olympic bronze in 1992",
 		"answers": [
@@ -103,6 +109,7 @@
 	},
 	{
 		"decisionText": "In 1997, Twigg placed 8th in a world championship race and decided to retire from cycling for good. She now had to find a different career to pursue.",
+		"correctText": "placeholder",
 		"icon": "retire",
 		"keyDecisionText": "Retired from cycling",
 		"answers": [
@@ -119,6 +126,7 @@
 	},
   {
 		"decisionText": "Twigg found an IT desk job, but the solitary nature of programming did not suit her. At one point, she didn’t show up to work for 4 days straight. She believed that her boss was about to fire her. What was Twigg's approach to this?",
+		"correctText": "placeholder",
 		"icon": "job",
 		"keyDecisionText": "Found IT job, but quit eventually",
 		"answers": [
@@ -135,6 +143,7 @@
 	},
   {
 		"decisionText": "Twigg had difficulty finding a new job. Anxiety inhibited her job search, and she was now in her 50’s where her technical skills were generally less relevant. By contrast, the average software engineer in Seattle is 35. She couldn’t find a job, had no savings, and was forced to move out of her apartment. She was now homeless in Seattle, and had to focus on survival. Altough she was still passionate about biking, it did not seem practical anymore.",
+		"correctText": "placeholder",
 		"icon": "bike",
 		"keyDecisionText": "Became homeless and gave her bike away",
 		"answers": [

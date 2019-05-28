@@ -8,6 +8,7 @@
 	"decisions": [  
 	  {
 		"decisionText": "Jaime has researched nearby homeless shelters and has two opportunities to volunteer in the neighborhood. Both have different time commitments. She now has to choose between the following two options:",
+		"correctText": "placeholder",
 		"icon": "volunteer",
 		"keyDecisionText": "Researched local shelters and chose a 6 month volunteer opportunity",
 		"answers": [
@@ -24,6 +25,7 @@
 	  },
 	  {
 		"decisionText": "What are some traits that might be important to become a successful volunteer at a homeless shelter?",
+		"correctText": "placeholder",
 		"icon": "empathy",
 		"answers": [
 		  {
@@ -39,6 +41,7 @@
 	  },
 	  {
 		"decisionText": "Jaime started working at a local women’s shelter located in the basement of a church. On her first shift, she noticed that all the beds were filling up fast. There were still people waiting outside trying to get shelter for the night. Do you think Jaime should let everyone in? ",
+		"correctText": "placeholder",
 		"icon": "house",
 		"keyDecisionText": "Called other shelters when her shelter had limited capacity",
 		"answers": [
@@ -60,6 +63,7 @@
       },
       {
         "decisionText": "The next week, a transgender woman who recently became homeless was next in line to get into the shelter with space still available. Since Jaime is working at a woman's shelter, many women at the shelter are survivors of violence and abuse. Should Jaime let them in?",
+		"correctText": "placeholder",
 		"icon": "gender",
 		"keyDecisionText": "Let transgender woman into shelter",
 		"answers": [
