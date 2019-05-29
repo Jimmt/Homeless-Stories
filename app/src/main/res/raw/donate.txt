@@ -1,29 +1,24 @@
-placeholder
+roots
 Roots
 Young Adult Shelter
-https://google.com
+http://www.rootsinfo.org/get-involved/donate/
 
-placeholder
+marysplace
 Mary's Place
 Women & Children Shelter
-http://www.washington.edu/
+https://www.marysplaceseattle.org/
 
-placeholder
-Mary's Place
-Women & Children Shelter
-http://www.washington.edu/
+teenfeed
+Teen Feed
+Meal & Support Coordination
+http://www.teenfeed.org/donate/
 
-placeholder
-Mary's Place
-Women & Children Shelter
-http://www.washington.edu/
-
-placeholder
-Mary's Place
-Women & Children Shelter
-http://www.washington.edu/
-
-placeholder
-Mary's Place
-Women & Children Shelter
-http://www.washington.edu/
+va
+Puget Sound VA
+Veteran Services
+https://www.pugetsound.va.gov/giving/
+	
+schoolofsocial
+UW School of Social Work
+Educational Institute
+https://socialwork.uw.edu/giving-opportunities
