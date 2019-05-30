@@ -6,6 +6,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -45,13 +46,19 @@ public class CorrectFragment extends OptionsFragment {
             decisionIndex = getArguments().getInt(ARG_DECISION_INDEX);
         }
 
-        View view = inflater.inflate(R.layout.fragment_correct, container, false);
+        View view = inflater.inflate(R.layout.fragment_story, container, false);
 
         listener.updateToolbarTitle(story.getName() + "'s Story", Gravity.LEFT);
         listener.setToolbarStyle(this);
 
+        ImageView icon = view.findViewById(R.id.decision_icon);
+        icon.setImageResource(R.drawable.ic_check_mark);
+        icon.setColorFilter(getResources().getColor(R.color.colorPrimary));
 
-        TextView bodyText = view.findViewById(R.id.correct_body_text);
+        TextView headerText = view.findViewById(R.id.decision_header_text);
+        headerText.setText("Correct");
+
+        TextView bodyText = view.findViewById(R.id.decision_text);
         bodyText.setText(Html.fromHtml(story.getDecisions().get(decisionIndex).getCorrectText()));
 
         MaterialProgressBar progressBar = view.findViewById(R.id.progress_bar);

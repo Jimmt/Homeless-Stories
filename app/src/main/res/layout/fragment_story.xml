@@ -70,14 +70,8 @@
             android:id="@+id/next_button"
             style="@style/CustomButton"
             android:layout_width="match_parent"
-            android:text="NEXT STORY" />
+            android:text="NEXT" />
 
-        <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/button"
-            style="@style/CustomButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BUTTON BUTTON BUTTON BUTTON BUTTON BUTTON" />
     </LinearLayout>
 
 
