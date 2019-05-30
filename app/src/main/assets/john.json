@@ -8,7 +8,7 @@
 	"decisions": [
 	  {
 		"decisionText": "John enrolled in an engineering program at a nearby community college in Seattle. Did he complete it?",
-		"correctText": "<i>placeholder</i><br>placeholder",
+		"correctText": "Although it is unclear what graduation rates are for veterans specifically, veterans often face hardships after discharge as they are generally older than traditional student population, have families, and work part-time jobs. Some veterans face mental and physical disability while attending school, making it unbearable to go to class.",
 		"icon": "school",
 		"keyDecisionText": "Dropped out",
 		"answers": [
@@ -19,20 +19,20 @@
 		  {
 			"real": false,
 			"answer": "Stayed in school",
-			"answerText": "Although it is unclear what graduation rates are for veterans specifically, veterans often face hardships after discharge as they are generally older than traditional student population, have families, and work part-time jobs. Some veterans face mental and physical disability while attending school, making it unbearable to go to class."
+			"answerText": "John eventually dropped out of his program."
 		  }
 		]
 	  },
 	  {
 		"decisionText": "After dropping out of the engineering program at the community college, he tried to look for a job that could apply the skills he learned from the Navy. Meanwhile, he lived on the couch of his friend. Was he able to find a job?",
-		"correctText": "placeholder",
+		"correctText": "Veterans often have a difficult time finding jobs. According to the Bureau of Labor Statistics, there are 326,000 unemployed veterans, 54% of which are aged 25-54. Additionally, those with service-connected disabilities have an unemployment rate of 5.2%, which is significantly higher than the rate for veterans with no disability (3.5%).",
 		"icon": "job",
 		"keyDecisionText": "Unable to find job",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Couldn't find a job",
-			"answerText": "Veterans often have a difficult time finding jobs. According to the Bureau of Labor Statistics, there are 326,000 unemployed veterans, 54% of which are aged 25-54. Additionally, those with service-connected disabilities have an unemployment rate of 5.2%, which is significantly higher than the rate for veterans with no disability (3.5%)."
+			"answerText": "John eventually found a job as a construction worker."
 		  },
 		  {
 			"real": true,
@@ -41,15 +41,15 @@
 		]
 	  },
 	  {
-		"decisionText": "John had extreme difficulty looking for work, but eventually found a job as a construction worker, despite the fact that the job wasn't relevant to the skills he learned in the Navy. Was he able to afford a place to live?",
-		"correctText": "placeholder",
+		"decisionText": "John had difficulty looking for work, but eventually found a job as a construction worker, despite the fact that the job wasn't relevant to the skills he learned in the Navy. Was he able to afford a place to live with the wages he earned?",
+		"correctText": "The average salary for a construction worker in Seattle is $31,352, which makes it difficult to afford an apartment, car, and other living expenses.",
 		"icon": "house",
 		"keyDecisionText": "Could not afford housing",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Found an affordable apartment",
-			"answerText": "The average salary for a construction worker in Seattle is $31,352, which makes it difficult to afford an apartment, car, and other living expenses."
+			"answerText": "Construction workers in Seattle on average make less than 50,000 a year, while housing prices in Seattle continue to increase."
 		  },
 		  {
 			"real": true,
@@ -59,14 +59,14 @@
 	  }, 
 	  {
 		"decisionText": "Unable to pay rent, John now had no choice but to live in a tent. He was dealing with financial issues, transient mood swings, and chronic pain while working his job. John found out from a friend that the HUD-VASH (Department Housing and Urban Development-Veterans Administration Supportive Housing) helps veterans with housing after discharge from the military. What do you think he did?",
-		"correctText": "placeholder",
+		"correctText": "John didn't continue being unhappy at his job. The HUD-VASH Program is a collaboration between the Department of Housing and Urban Development Housing Choice Voucher which provides rental assistance through housing vouchers and the Department of Veteran Affairs which provides clinical services in nearby communities. This program targets chronically homeless veterans and assists them until they can achieve financial independence, making it a good fit for John.",
 		"icon": "veteran",
 		"keyDecisionText": "Went to HUD-VASH",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Continued being unhappy at his job",
-			"answerText": "John didn't continue being unhappy at his job. The HUD-VASH Program is a collaboration between the Department of Housing and Urban Development Housing Choice Voucher which provides rental assistance through housing vouchers and the Department of Veteran Affairs which provides clinical services in nearby communities. This program targets chronically homeless veterans and assists them until they can achieve financial independence, making it a good fit for John."
+			"answerText": "John courageously left his job and received help at the HUD-VASH."
 		  },
 		  {
 			"real": true,
@@ -76,14 +76,14 @@
 	  }, 
 	  {
 		"decisionText": "John went to the HUD-VASH for help, but this was tough for him because he wanted to achieve success on his own. He also felt that the housing and medical assistance provided from the vouchers would help other veterans who needed it more. Despite all of this, did he continue receiving help from the HUD-VASH?",
-		"correctText": "placeholder",
+		"correctText": "John didn't turn down the help he was offered by HUD-VASH. The VA Puget Sound works with 12 other public housing authorities that serve patients, in which 1,731 of 1,888 housing vouchers distributed are used, a 91% utilization rate.",
 		"icon": "donate",
 		"keyDecisionText": "Kept receiving help",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Refused help",
-			"answerText": "John didn't turn down the help he was offered by HUD-VASH. The VA Puget Sound works with 12 other public housing authorities that serve patients, in which 1,731 of 1,888 housing vouchers distributed are used, a 91% utilization rate."
+			"answerText": "The HUD-VASH helped John immensely, so he continued to receive assistance."
 		  },
 		  {
 			"real": true,
