@@ -19,8 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_check_mark" />
-                            <entry key="sourceFile" value="C:\Users\austi\Downloads\check-mark.svg" />
+                            <entry key="height" value="67" />
+                            <entry key="outputName" value="ic_story_wellness" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="C:\Users\austi\Downloads\jones\jones\wellness.svg" />
+                            <entry key="width" value="91" />
                           </map>
                         </option>
                       </PersistentState>
