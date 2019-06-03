@@ -3,12 +3,12 @@
 	"image": "jazz",
 	"name": "Jazz",
 	"type": "Homeless Youth",
-	"source": "https://google.com",
+	"source": "https://faculty.washington.edu/jwj/lis570/paper392_assubmitted-1.pdf",
 	"preview": "At the time of this story, Jazz was a 20 year old homeless youth located in the U-District of Seattle. Jazz took a 4-week class called \"New Tech for Youth Sessions\" to develop skills for job opportunities. At the end of the class, she was contacted to participate in a study to explore the relationship homeless individuals have with technology.",
 	"decisions": [
 	  {
 		"decisionText": "Jazz decided to participate in the study and received an iPod for free. What do you think she did with the iPod?",
-		"correctText": "placeholder",
+		"correctText": "Jazz loves music and it had been an important part of her life grouwing up. Due to her tenuous housing situation, without a stable shelter or bed to sleep in, she valued the iPod as a luxury. Without a place to charge the ipod frequently, she decided to pawn off the Ipod for money.",
 		"icon": "ipod",
 		"keyDecisionText": "Received iPod",
 		"answers": [
@@ -19,25 +19,25 @@
 		  {
 			"real": false,
 			"answer": "Listen to music",
-			"answerText": "Jazz didn't use the iPod to listen to music."
+			"answerText": "Jazz didn't use the iPod to just listen to music!"
 		  }
 		]
 	  },
 	  {
 		"decisionText": "Jazz decided to sell the iPod. What do you think Jazz did with the money?",
-		"correctText": "placeholder",
+		"correctText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Saving up for an apartment wasn't an option for Jazz when she had other needs to take care of. Instead, Jazz wanted to use the money from the ipod in ways in ways that created or reciprocated goodwill. She decided to buy a dog.",
 		"icon": "money",
 		"keyDecisionText": "Sold iPod and bought dog",
 		"answers": [
 		  {
 			"real": false,
 			"answer": "Save up for apartment",
-			"answerText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Jazz didn't use the money to save up for an apartment."
+			"answerText": "Jazz didn't use the money to save up for an apartment."
 		  },
 		  {
 			"real": false,
 			"answer": "Buy alcohol",
-			"answerText": "Most homeless people do not have alcohol or drug-related problems, and put what money they have to better use elsewhere."
+			"answerText": "Most homeless folk put what money they have to address their most urgent and important needs like shelter or food, not alcohol or drugs."
 		  },
 		  {
 			"real": true,
@@ -47,7 +47,7 @@
 	  },
 	  {
 		"decisionText": "Jazz bought a dog after selling her iPod. What do you think she did with the dog?",
-		"correctText": "placeholder",
+		"correctText": "Jazz gave away her dog to a friend. Although we don't know the exact reason for her decision,a key informant suggested that it was a brilliant move for creating credibility, for being known for giving a cool dog to a well-known person in the community. Social capital is essential on the streets.",
 		"icon": "dog",
 		"keyDecisionText": "Gave dog to friend",
 		"answers": [
@@ -63,5 +63,5 @@
 		]
 	  }
 	],
-	"finalText": "Jazz gave away her dog to a friend. A key informant suggested that it was a brilliant move for creating credibility, for being known for giving a cool dog to a well-known person in the community. Social capital is essential on the streets."
+	"finalText": "During her interview, Jazz said \"All the songs I like I have memorized\", and says that she does not listen to music as much anymore. We value things differently when we have a stable home and bed to sleep in. If you want to help, just say hello and ask what they need instead of assuming their problems and issues. Your experiences and perspectives may differ but your kindness will be appreciated!"
 }
