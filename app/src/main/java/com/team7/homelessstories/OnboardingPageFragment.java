@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -82,7 +83,7 @@ public class OnboardingPageFragment extends Fragment {
 
         MaterialButton startButton = view.findViewById(R.id.start_button);
         if (!lastPage) {
-            ((ViewGroup) view).removeView(startButton);
+            ((LinearLayout) view.findViewById(R.id.onboarding_container)).removeView(startButton);
         } else {
             startButton.setOnClickListener(new View.OnClickListener() {
                 @Override

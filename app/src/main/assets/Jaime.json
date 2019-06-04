@@ -3,7 +3,7 @@
 	"image": "jaime",
 	"name": "Jaime",
 	"type": "Women's Shelter Volunteer",
-	"source": "https://google.com",
+	"source": "https://www.marysplaceseattle.org/",
 	"preview": "Jaime is a university student who is passionate about improving the lives of people in her community and help those less privileged than her.",
 	"decisions": [  
 	  {
@@ -63,7 +63,7 @@
       },
       {
         "decisionText": "The next week, a transgender woman who recently became homeless was next in line to get into the shelter with space still available. Since Jaime is working at a woman's shelter, many women at the shelter are survivors of violence and abuse. Should Jaime let them in?",
-		"correctText": "Due to religious affiliations, some organizations may be unaccepting of transgender people. As a result, they are often not allowed in the shelter even if they are in desperate need of help. And forcing anybody to prove their gender through medical records is immoral, unethical and illegal. Ideally, all organizations should be accepting and welcoming.",
+		"correctText": "Due to religious affiliations, some organizations may be unaccepting of transgender people. As a result, they are often not allowed in the shelter even if they are in desperate need of help. However, forcing anybody to prove their gender through medical records is immoral, unethical and illegal. Ideally, all organizations should be accepting and welcoming.",
 		"icon": "gender",
 		"keyDecisionText": "Let transgender woman into shelter",
 		"answers": [
