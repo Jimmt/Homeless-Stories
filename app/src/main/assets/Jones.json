@@ -1,14 +1,14 @@
 {
     "index": 4,
-    "image": "male",
+    "image": "jones",
     "name": "Jones",
     "type": "Sick with nowhere to go",
     "source": "https://www.realchangenews.org/2019/04/24/sick-nowhere-go",
-    "preview": "For a lot of us catching a cold or flu means staying cozy with a cup of hot tea, hearty food and rest. Fluids, warmth and comfort can make you feel better in a matter of days. However for those living on the streets, even a common cold can develop into a potentially life threatening illness. Read more about Jones' struggles staying healthy in the seasonal cold, rain, wind and snow of the Pacific Northwest.",
+    "preview": "For many of us, catching a cold or flu means staying cozy with a cup of hot tea, hearty food and rest. Fluids, warmth and comfort can make you feel better in a matter of days. However for those living on the streets, even a common cold can develop into a potentially life threatening illness. Read more about Jones' struggle to stay healthy in the seasonal cold, rain, wind and snow of the Pacific Northwest.",
     "decisions": [
         {
             "decisionText": "February and March have had inclement weather in recent years. One day, Jones wakes up feeling a little ill. Something seems off, he's tired and in pain. It is raining heavily and he fears it might get worse.",
-            "correctText": "Jones says, \"I stay healthy as long as I stay out on the streets.\" Shelters often get crowded as the weather gets worse. Jones feels like he gets sick whenever he spends a night in the emergency shelters. Sometimes shelters don't open either. This uncertainty makes getting care harder for Jones. ",
+            "correctText": "Jones reports, \"I stay healthy as long as I stay out on the streets.\" Shelters often get crowded as the weather gets worse, and Jones feels like he gets sick whenever he spends a night in the emergency shelters. Sometimes shelters don't open either, and that uncertainty makes getting care harder for Jones. ",
             "icon": "rain",
             "keyDecisionText": "Struggled with his health in heavy rain",
             "answers": [
@@ -25,14 +25,14 @@
         },
         {
             "decisionText": "What might be the most dangerous illness for somebody living in the streets according to Jones?",
-            "correctText": "Jones believes that chest colds that progress into pneumonia is the most dangerous illness on the streets. When asked about what he does during such times, he said: “I just try to find a spot where I can curl up and rest during the day. Yeah, it’s tough being sick out there. In one study, more than 8 out of 10 people (85%) experiencing homelessness reported having a chronic health condition. According to the study, some of the the most prominent health conditions that affect homeless folks are unintentional injuries (bruises, cuts, burns, etc.), Exposure to the elements, Musculoskeletal disorders and chronic pain, Hunger and nutrition, Skin & foot problems, Infectious diseases, Dental problems, Respiratory illness.",
+            "correctText": "Jones believes that chest colds that progress into pneumonia are the most dangerous illness on the streets. When asked about what he does during such times, he said: “I just try to find a spot where I can curl up and rest during the day. Yeah, it’s tough being sick out there.\" In one study, more than 8 out of 10 people (85%) experiencing homelessness reported having a chronic health condition. According to the study, some of the the most prominent health conditions that affect homeless folks are unintentional injuries (bruises, cuts, burns, etc.), exposure to the elements, musculoskeletal disorders, and lack of nutrition.",
             "icon": "medicine",
             "keyDecisionText": "Even common colds can turn into pneumonia when untreated",
             "answers": [
                 {
                     "real": false,
                     "answer": "Frostbite and hypothermia",
-                    "answerText": "Exposure to the elements is a major hazard. However, it is not the most dangerous illness according to Jones."
+                    "answerText": "Exposure to the elements is a major hazard. However, these are not the most dangerous illness, according to Jones."
                 },
                 {
                     "real": false,
@@ -47,7 +47,7 @@
         },
         {
             "decisionText": "What do you think Jones' biggest challenge about getting adequate health care is?",
-            "correctText": "Sleep deprivation compounds existing ailments. According to Jones, “There’s nothing you can do if you don’t get enough sleep. Sleep is important. It gives you a mental and physical morale boost. I’m usually so tired I can’t tell if I’m sick or not.” A lot of homeless folk agree that the worst part of staying healthy is lack of sleep. For individuals without permanent housing, sleep is difficult to come by. When there’s no way to secure your personal belongings, it’s dangerous and frightening to be as vulnerable as we are when we’re in a truly restful sleep.",
+            "correctText": "Sleep deprivation compounds existing ailments. According to Jones, “There’s nothing you can do if you don’t get enough sleep. Sleep is important. It gives you a mental and physical morale boost. I’m usually so tired I can’t tell if I’m sick or not.” A lot of homeless folk agree that the hardest part about staying healthy is getting adequate sleep. For individuals without permanent housing, sleep is difficult to come by. When there’s no way to secure your personal belongings, it’s dangerous and frightening to be as vulnerable as we are when we’re in a truly restful sleep.",
             "icon": "wellness",
             "keyDecisionText": "Sleep deprivation compounds existing ailments",
             "answers": [
@@ -64,7 +64,7 @@
         },
         {
             "decisionText": "One day while picking up metal cans for a recycling plant, Jones gets hurt and has a big cut on his arm. It's bleeding and seems like it could get infected if left untreated. What do you think Jones did?",
-            "correctText": "People experiencing homelessness have a significantly higher risk of death due to preventable causes. Unintentional injuries are a leading cause of morbidity and mortality, especially among homeless men. Injuries are often the result of falls or being struck by a motor vehicle. Open wounds can be very dangerous and take a long time to heal. Normally, it might take a few days for a wound to heal, but on the streets it can take weeks or months, and it can get infected. Jones uses iodized salt on wounds since it is easy to find. Additionally, It is extremely hard to find a place to wash and sanitize a wound. Stores and restaurants are often apprehensive about people using their bathrooms. Places that give out food for people experiencing homelessness don't have bathrooms. Lack of sanitation makes it harder to treat wounds, increasing the chance of getting an open wound infected.",
+            "correctText": "People experiencing homelessness have a significantly higher risk of death due to preventable causes. Unintentional injuries are a leading cause of morbidity and mortality, especially among homeless men. Injuries are often the result of falls or being struck by motor vehicles. Open wounds can be very dangerous and take a long time to heal. Normally, it might take a few days for a wound to heal, but on the streets it can take weeks or months. Additionally, it is extremely hard to find a place to wash and sanitize a wound. Stores and restaurants are often apprehensive about people using their bathrooms, and places that give out food for homeless people don't have bathrooms. Lack of sanitation makes it harder to treat wounds, increasing the chance of infection. Jones resorts to using iodized salt to treat his wounds, since it is easy to find.",
             "icon": "bandaid",
             "keyDecisionText": "Bruises, cuts, burns, etc. take longer to heal without proper sanitation and medication.",
             "answers": [

@@ -8,7 +8,7 @@
 	"decisions": [
 	  {
 		"decisionText": "Jazz decided to participate in the study and received an iPod for free. What do you think she did with the iPod?",
-		"correctText": "Jazz loves music and it had been an important part of her life grouwing up. Due to her tenuous housing situation, without a stable shelter or bed to sleep in, she valued the iPod as a luxury. Without a place to charge the ipod frequently, she decided to pawn off the Ipod for money.",
+		"correctText": "Jazz loves music and it had been an important part of her life growing up. Due to her tenuous housing situation, without a stable shelter or bed to sleep in, she viewed the iPod as a luxury. Without a place to charge the iPod frequently, she decided to pawn off the iPod for money.",
 		"icon": "ipod",
 		"keyDecisionText": "Received iPod",
 		"answers": [
@@ -25,7 +25,7 @@
 	  },
 	  {
 		"decisionText": "Jazz decided to sell the iPod. What do you think Jazz did with the money?",
-		"correctText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Saving up for an apartment wasn't an option for Jazz when she had other needs to take care of. Instead, Jazz wanted to use the money from the ipod in ways in ways that created or reciprocated goodwill. She decided to buy a dog.",
+		"correctText": "Average rent in King County, Seattle has spiked to $1731 a month in 2018. Saving up for an apartment wasn't an option for Jazz when she had other needs to take care of. Instead, Jazz wanted to use the money from the iPod in ways that created or reciprocated goodwill. She decided to buy a dog.",
 		"icon": "money",
 		"keyDecisionText": "Sold iPod and bought dog",
 		"answers": [
@@ -47,7 +47,7 @@
 	  },
 	  {
 		"decisionText": "Jazz bought a dog after selling her iPod. What do you think she did with the dog?",
-		"correctText": "Jazz gave away her dog to a friend. Although we don't know the exact reason for her decision,a key informant suggested that it was a brilliant move for creating credibility, for being known for giving a cool dog to a well-known person in the community. Social capital is essential on the streets.",
+		"correctText": "Jazz gave away her dog to a friend. Although we don't know the exact reason for her decision, a key informant suggested that it was a brilliant move for creating credibility, for being known for giving a cool dog to a well-known person in the community. Social capital is essential on the streets.",
 		"icon": "dog",
 		"keyDecisionText": "Gave dog to friend",
 		"answers": [
