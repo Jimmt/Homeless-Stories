@@ -4,6 +4,9 @@ import android.content.Context;
 
 import androidx.fragment.app.Fragment;
 
+/**
+ * Parent fragment class. Main purpose is to attach and detach a {@link com.team7.homelessstories.FragmentInteractionListener}.
+ */
 public class ListenerFragment extends Fragment {
     protected FragmentInteractionListener listener;
 

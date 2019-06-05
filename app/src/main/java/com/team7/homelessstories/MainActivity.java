@@ -23,6 +23,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+/**
+ * Entry point for application. Immediately either switches to
+ * {@link com.team7.homelessstories.OnboardingActivity} or displays
+ * {@link com.team7.homelessstories.StoriesFragment}
+ */
 public class MainActivity extends AppCompatActivity implements FragmentInteractionListener {
     private NavigationView navigationView;
     private DrawerLayout drawer;
@@ -146,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
         drawer.closeDrawers();
         FragmentManager manager = getSupportFragmentManager();
 
+        // Re-select the appropriate drawer item if back is pressed
         if (manager.getBackStackEntryCount() > 0) {
             super.onBackPressed();
             Fragment currentFragment = (Fragment) manager.findFragmentById(R.id.frame_layout);
@@ -164,6 +170,8 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
     @Override
     public void switchFragments(Fragment frag, TransitionType type) {
+        // Generalized transitions, but this isn't used for the entirety of the app. Would be better
+        // to standardize all fragment transactions to some other system.
         FragmentManager fm = getSupportFragmentManager();
         if (type == TransitionType.SLIDE_UP_FADE_OUT) {
             fm.beginTransaction()
@@ -207,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInteracti
 
     @Override
     public void setToolbarStyle(Fragment currentFrag) {
+        // Better to do this by inflating different XML files, but couldn't figure out how.
         if (currentFrag instanceof StoriesFragment || currentFrag instanceof AboutFragment
                 || currentFrag instanceof DonateFragment || currentFrag instanceof SourcesFragment) {
             toolbarTitle.setBackground(null);

@@ -19,6 +19,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * RecyclerView adapter used for scrolling through story cards.
+ */
 public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
     private static final int UNSELECTED = -1;
     private FragmentActivity activity;

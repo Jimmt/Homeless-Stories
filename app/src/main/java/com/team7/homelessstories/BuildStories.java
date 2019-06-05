@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+/**
+ * Utility class to convert JSON stories to objects.
+ */
 public class BuildStories {
     private static ArrayList<Story> stories;
     private static final String TAG = BuildStories.class.getName();

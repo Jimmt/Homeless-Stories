@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+/**
+ * Generalized fragment class that not only has a {@link com.team7.homelessstories.FragmentInteractionListener},
+ * but also enables the options menu with a cancel button.
+ */
 public class OptionsFragment extends ListenerFragment {
 
 
